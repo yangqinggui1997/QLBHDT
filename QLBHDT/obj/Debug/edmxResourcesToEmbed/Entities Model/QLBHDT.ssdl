@@ -1,0 +1,1230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBHDTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CNCHITIET">
+    <Key>
+      <PropertyRef Name="IdCN" />
+      <PropertyRef Name="IdNCU" />
+    </Key>
+    <Property Name="IdCN" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdNCU" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenNCU" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SĐT" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Conno" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CONGNO">
+    <Key>
+      <PropertyRef Name="IdCN" />
+    </Key>
+    <Property Name="IdCN" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdNV" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgayTK" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DOANHTHU">
+    <Key>
+      <PropertyRef Name="IdDT" />
+    </Key>
+    <Property Name="IdDT" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdNV" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Doanhsoban" Type="float" Nullable="false" />
+    <Property Name="Doanhthubh" Type="float" Nullable="false" />
+    <Property Name="Loinhuan" Type="float" Nullable="false" />
+    <Property Name="NgayTK" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HANGTON">
+    <Key>
+      <PropertyRef Name="IdHT" />
+    </Key>
+    <Property Name="IdHT" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdNV" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgayTK" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HDBANCHITIET">
+    <Key>
+      <PropertyRef Name="IdHDB" />
+      <PropertyRef Name="IdSP" />
+    </Key>
+    <Property Name="IdHDB" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdSP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SL" Type="float" Nullable="false" />
+    <Property Name="Dongiaban" Type="float" Nullable="false" />
+    <Property Name="Giamgia" Type="float" Nullable="false" />
+    <Property Name="Thanhtien" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HDNHAPCHITIET">
+    <Key>
+      <PropertyRef Name="IdHDN" />
+      <PropertyRef Name="IdSP" />
+    </Key>
+    <Property Name="IdHDN" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdSP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SL" Type="float" Nullable="false" />
+    <Property Name="Dongianhap" Type="float" />
+    <Property Name="Giamgia" Type="float" />
+    <Property Name="Thanhtien" Type="float" />
+  </EntityType>
+  <EntityType Name="HOADONBAN">
+    <Key>
+      <PropertyRef Name="IdHDB" />
+    </Key>
+    <Property Name="IdHDB" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdNV" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdKH" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgayLapHD" Type="datetime" Nullable="false" />
+    <Property Name="SL" Type="float" />
+    <Property Name="Tongtien" Type="float" />
+    <Property Name="HinhThucTT" Type="nvarchar" MaxLength="100" />
+    <Property Name="Dathanhtoan" Type="float" />
+    <Property Name="Conno" Type="float" />
+  </EntityType>
+  <EntityType Name="HOADONNHAP">
+    <Key>
+      <PropertyRef Name="IdHDN" />
+    </Key>
+    <Property Name="IdHDN" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdNV" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdNCU" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgayLapHD" Type="datetime" Nullable="false" />
+    <Property Name="SL" Type="float" />
+    <Property Name="Tongtien" Type="float" />
+    <Property Name="Dathanhtoan" Type="float" />
+    <Property Name="Conno" Type="float" />
+    <Property Name="NgayHHTT" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HTCHITIET">
+    <Key>
+      <PropertyRef Name="IdHT" />
+      <PropertyRef Name="IdSP" />
+    </Key>
+    <Property Name="IdHT" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdSP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenSP" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NgaySX" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgayHH" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgayNhap" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SLCon" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="IdKH" />
+    </Key>
+    <Property Name="IdKH" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenKH" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NgaySinh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gioitinh" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SoCMND" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="SĐT" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LoaiKH" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Conno" Type="float" />
+    <Property Name="Danhgia" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NGUOI_DUNG">
+    <Key>
+      <PropertyRef Name="IdND" />
+    </Key>
+    <Property Name="IdND" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdNND" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdNV" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenND" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TenTK" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PassWord" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="NgayTaoTK" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DanhmucTC" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="QuyenDM" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NHACUNGUNG">
+    <Key>
+      <PropertyRef Name="IdNCU" />
+    </Key>
+    <Property Name="IdNCU" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenNCU" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="SĐT" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="QuyMoNCU" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ConnoNCU" Type="float" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="IdNV" />
+    </Key>
+    <Property Name="IdNV" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenNV" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NgaySinh" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gioitinh" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SĐT" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ChucVu" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LuongCB" Type="float" Nullable="false" />
+    <Property Name="hsl" Type="float" Nullable="false" />
+    <Property Name="Thuclinh" Type="float" Nullable="false" />
+    <Property Name="Taikhoan" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="NHOM_NGUOI_DUNG">
+    <Key>
+      <PropertyRef Name="IdNND" />
+    </Key>
+    <Property Name="IdNND" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdNhomQH" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenNND" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="MoTaNND" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="NHOM_QUYEN_HAN">
+    <Key>
+      <PropertyRef Name="IdNQH" />
+    </Key>
+    <Property Name="IdNQH" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenNQH" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="500" />
+    <Property Name="DanhmucTC" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="QuyenDM" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="IdSP" />
+    </Key>
+    <Property Name="IdSP" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdNCU" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenSP" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="NgaySX" Type="varchar" MaxLength="50" />
+    <Property Name="NgayHH" Type="varchar" MaxLength="50" />
+    <Property Name="NgayNhap" Type="varchar" MaxLength="50" />
+    <Property Name="NhaSX" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="SLNhap" Type="float" Nullable="false" />
+    <Property Name="DonGiaNhap" Type="float" />
+    <Property Name="DonGiaBanLe" Type="float" />
+    <Property Name="DonGiaBanSi" Type="float" />
+    <Property Name="Donvi" Type="nvarchar" MaxLength="50" />
+    <Property Name="GiamGia" Type="float" />
+    <Property Name="AnhSP" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="TRUY_CAP">
+    <Key>
+      <PropertyRef Name="IdTC" />
+    </Key>
+    <Property Name="IdTC" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdND" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenTK" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LanDMKCuoi" Type="varchar" MaxLength="100" />
+    <Property Name="LanDNCuoi" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DanhmucTC" Type="nvarchar" MaxLength="500" />
+    <Property Name="Thaotac" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <Association Name="FK_CNCHITIET_CONGNO">
+    <End Role="CONGNO" Type="Self.CONGNO" Multiplicity="1" />
+    <End Role="CNCHITIET" Type="Self.CNCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONGNO">
+        <PropertyRef Name="IdCN" />
+      </Principal>
+      <Dependent Role="CNCHITIET">
+        <PropertyRef Name="IdCN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CNCHITIET_NHACUNGUNG">
+    <End Role="NHACUNGUNG" Type="Self.NHACUNGUNG" Multiplicity="1" />
+    <End Role="CNCHITIET" Type="Self.CNCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGUNG">
+        <PropertyRef Name="IdNCU" />
+      </Principal>
+      <Dependent Role="CNCHITIET">
+        <PropertyRef Name="IdNCU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONGNO_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="CONGNO" Type="Self.CONGNO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="CONGNO">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOANHTHU_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="DOANHTHU" Type="Self.DOANHTHU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="DOANHTHU">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HANGTON_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="HANGTON" Type="Self.HANGTON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="HANGTON">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDBANCHITIET_HOADONBAN">
+    <End Role="HOADONBAN" Type="Self.HOADONBAN" Multiplicity="1" />
+    <End Role="HDBANCHITIET" Type="Self.HDBANCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADONBAN">
+        <PropertyRef Name="IdHDB" />
+      </Principal>
+      <Dependent Role="HDBANCHITIET">
+        <PropertyRef Name="IdHDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDBANCHITIET_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="HDBANCHITIET" Type="Self.HDBANCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="IdSP" />
+      </Principal>
+      <Dependent Role="HDBANCHITIET">
+        <PropertyRef Name="IdSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDNHAPCHITIET_HOADONNHAP">
+    <End Role="HOADONNHAP" Type="Self.HOADONNHAP" Multiplicity="1" />
+    <End Role="HDNHAPCHITIET" Type="Self.HDNHAPCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADONNHAP">
+        <PropertyRef Name="IdHDN" />
+      </Principal>
+      <Dependent Role="HDNHAPCHITIET">
+        <PropertyRef Name="IdHDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDNHAPCHITIET_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="HDNHAPCHITIET" Type="Self.HDNHAPCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="IdSP" />
+      </Principal>
+      <Dependent Role="HDNHAPCHITIET">
+        <PropertyRef Name="IdSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADONBAN_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="HOADONBAN" Type="Self.HOADONBAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="IdKH" />
+      </Principal>
+      <Dependent Role="HOADONBAN">
+        <PropertyRef Name="IdKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADONBAN_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="HOADONBAN" Type="Self.HOADONBAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="HOADONBAN">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADONNHAP_NHACUNGUNG">
+    <End Role="NHACUNGUNG" Type="Self.NHACUNGUNG" Multiplicity="1" />
+    <End Role="HOADONNHAP" Type="Self.HOADONNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGUNG">
+        <PropertyRef Name="IdNCU" />
+      </Principal>
+      <Dependent Role="HOADONNHAP">
+        <PropertyRef Name="IdNCU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADONNHAP_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="HOADONNHAP" Type="Self.HOADONNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="HOADONNHAP">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HTCHITIET_HANGTON">
+    <End Role="HANGTON" Type="Self.HANGTON" Multiplicity="1" />
+    <End Role="HTCHITIET" Type="Self.HTCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HANGTON">
+        <PropertyRef Name="IdHT" />
+      </Principal>
+      <Dependent Role="HTCHITIET">
+        <PropertyRef Name="IdHT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HTCHITIET_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="HTCHITIET" Type="Self.HTCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="IdSP" />
+      </Principal>
+      <Dependent Role="HTCHITIET">
+        <PropertyRef Name="IdSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NGUOI_DUNG_NHAN_VIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="NGUOI_DUNG" Type="Self.NGUOI_DUNG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="NGUOI_DUNG">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NGUOI_DUNG_NHOM_NGUOI_DUNG">
+    <End Role="NHOM_NGUOI_DUNG" Type="Self.NHOM_NGUOI_DUNG" Multiplicity="1" />
+    <End Role="NGUOI_DUNG" Type="Self.NGUOI_DUNG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHOM_NGUOI_DUNG">
+        <PropertyRef Name="IdNND" />
+      </Principal>
+      <Dependent Role="NGUOI_DUNG">
+        <PropertyRef Name="IdNND" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHOM_NGUOI_DUNG_NHOM_QUYEN_HAN">
+    <End Role="NHOM_QUYEN_HAN" Type="Self.NHOM_QUYEN_HAN" Multiplicity="1" />
+    <End Role="NHOM_NGUOI_DUNG" Type="Self.NHOM_NGUOI_DUNG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHOM_QUYEN_HAN">
+        <PropertyRef Name="IdNQH" />
+      </Principal>
+      <Dependent Role="NHOM_NGUOI_DUNG">
+        <PropertyRef Name="IdNhomQH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SANPHAM_NHACUNGUNG">
+    <End Role="NHACUNGUNG" Type="Self.NHACUNGUNG" Multiplicity="1" />
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGUNG">
+        <PropertyRef Name="IdNCU" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="IdNCU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRUY_CAP_NGUOI_DUNG">
+    <End Role="NGUOI_DUNG" Type="Self.NGUOI_DUNG" Multiplicity="1" />
+    <End Role="TRUY_CAP" Type="Self.TRUY_CAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOI_DUNG">
+        <PropertyRef Name="IdND" />
+      </Principal>
+      <Dependent Role="TRUY_CAP">
+        <PropertyRef Name="IdND" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_CapnhatLanDMKcuoi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mand" Type="varchar" Mode="In" />
+    <Parameter Name="landmkcuoi" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatMK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="mk" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatNgayTKCN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="macn" Type="varchar" Mode="In" />
+    <Parameter Name="ngaytk" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatNgayTKHT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maht" Type="varchar" Mode="In" />
+    <Parameter Name="ngaytk" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatnoKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="makh" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatnoNCU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatNotrenHDB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdb" Type="varchar" Mode="In" />
+    <Parameter Name="conno" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatNotrenHDN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdn" Type="varchar" Mode="In" />
+    <Parameter Name="conno" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatSLSanPham" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+    <Parameter Name="SL" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatSLSPtrenHDB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdb" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatSLSPtrenHDN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatThaotacTC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="matc" Type="varchar" Mode="In" />
+    <Parameter Name="danhmuctc" Type="nvarchar" Mode="In" />
+    <Parameter Name="thaotac" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatTKCNCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="macn" Type="varchar" Mode="In" />
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatTKDT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="madt" Type="varchar" Mode="In" />
+    <Parameter Name="thangtk" Type="varchar" Mode="In" />
+    <Parameter Name="namtk" Type="varchar" Mode="In" />
+    <Parameter Name="ngaytk" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatTKHTCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maht" Type="varchar" Mode="In" />
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+    <Parameter Name="SL" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatTKNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="taikhoan" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatTTtrenHDB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdb" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatTTtrenHDN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CapnhatTTtrenSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+    <Parameter Name="nhasx" Type="nvarchar" Mode="In" />
+    <Parameter Name="sl" Type="varchar" Mode="In" />
+    <Parameter Name="dongianhap" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiCN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiCNCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiCNCTcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCN" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiCNcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCN" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiDT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiDTcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdDT" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiHDB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiHDBCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiHDBCTcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdb" Type="varchar" Mode="In" />
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiHDBCThientai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdb" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiHDBCTLenBC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdb" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiHDBcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdHDB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiHDN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiHDNCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiHDNCTcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdHDN" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiHDNCTLenBC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiHDNcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdHDN" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiHT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiHTCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiHTCTcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdHT" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiHTCTLenBC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maht" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiHTcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdHT" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthikhachhang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiKHcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdKH" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiNCU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiNCUcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNCU" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiND" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiNDtheoten" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tennd" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthinguoidungcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNV" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthinhacungungcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNCU" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthinhanvien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthinhanviencuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNV" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiNND" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiNNDcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNND" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiNNDtheoten" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tennnd" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiNQH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiNQHcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNQH" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_hienthiSPcuthe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdSP" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_hienthiTC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_KiemtraCNCTtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="macn" Type="varchar" Mode="In" />
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraCNtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="macn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraDTtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="madt" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraHDBCTtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdb" Type="varchar" Mode="In" />
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraHDBtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdb" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraHDNCTtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdn" Type="varchar" Mode="In" />
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraHDNtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraHTCTtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maht" Type="varchar" Mode="In" />
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraHTtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maht" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Kiemtrakhtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="makh" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraNCUtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraNDtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mand" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraNNDtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mannd" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraNQHtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manqh" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Kiemtranvtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraSPtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KiemtraTCtrung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="matc" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KTHDBTThang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="thang" Type="varchar" Mode="In" />
+    <Parameter Name="nam" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KTTKCNTT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="thangtk" Type="varchar" Mode="In" />
+    <Parameter Name="namtk" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KTTKDTDT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="thangtk" Type="varchar" Mode="In" />
+    <Parameter Name="namtk" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_KTTKHTTT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="thangtk" Type="varchar" Mode="In" />
+    <Parameter Name="namtk" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LayIdNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mand" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LayMacnTheoMaNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LayMadtTheoMaNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LayMahdbTheoMaNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LayMahdnTheoMaNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LayMahtTheoMaNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LayTenNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNV" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LayTTKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdKH" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LayTTNCU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNCU" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_LayTTSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdSP" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SPBanTrongThang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="thangtk" Type="varchar" Mode="In" />
+    <Parameter Name="namtk" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_suaHDB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdb" Type="varchar" Mode="In" />
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="makh" Type="varchar" Mode="In" />
+    <Parameter Name="ngaylaphd" Type="datetime" Mode="In" />
+    <Parameter Name="sl" Type="varchar" Mode="In" />
+    <Parameter Name="tongtien" Type="varchar" Mode="In" />
+    <Parameter Name="hinhthuctt" Type="nvarchar" Mode="In" />
+    <Parameter Name="dathanhtoan" Type="varchar" Mode="In" />
+    <Parameter Name="conno" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_suaHDBCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdb" Type="varchar" Mode="In" />
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+    <Parameter Name="sl" Type="varchar" Mode="In" />
+    <Parameter Name="dongiaban" Type="varchar" Mode="In" />
+    <Parameter Name="giamgia" Type="varchar" Mode="In" />
+    <Parameter Name="thanhtien" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_suaHDN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdn" Type="varchar" Mode="In" />
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+    <Parameter Name="ngaylaphd" Type="varchar" Mode="In" />
+    <Parameter Name="sl" Type="varchar" Mode="In" />
+    <Parameter Name="tongtien" Type="varchar" Mode="In" />
+    <Parameter Name="dathanhtoan" Type="varchar" Mode="In" />
+    <Parameter Name="conno" Type="varchar" Mode="In" />
+    <Parameter Name="ngayhhtt" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_suaHDNCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdn" Type="varchar" Mode="In" />
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+    <Parameter Name="sl" Type="varchar" Mode="In" />
+    <Parameter Name="dongianhap" Type="varchar" Mode="In" />
+    <Parameter Name="giamgia" Type="varchar" Mode="In" />
+    <Parameter Name="thanhtien" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_suaKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="makh" Type="varchar" Mode="In" />
+    <Parameter Name="tenkh" Type="nvarchar" Mode="In" />
+    <Parameter Name="ngaysinh" Type="varchar" Mode="In" />
+    <Parameter Name="gioitinh" Type="nvarchar" Mode="In" />
+    <Parameter Name="socmnd" Type="varchar" Mode="In" />
+    <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="loaikh" Type="nvarchar" Mode="In" />
+    <Parameter Name="conno" Type="varchar" Mode="In" />
+    <Parameter Name="danhgia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_suaNCU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+    <Parameter Name="tenncu" Type="nvarchar" Mode="In" />
+    <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="quymoncu" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_suaND" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mand" Type="varchar" Mode="In" />
+    <Parameter Name="mannd" Type="varchar" Mode="In" />
+    <Parameter Name="danhmuctc" Type="nvarchar" Mode="In" />
+    <Parameter Name="quyendm" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_suaNND" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mannd" Type="varchar" Mode="In" />
+    <Parameter Name="manqh" Type="varchar" Mode="In" />
+    <Parameter Name="tennnd" Type="nvarchar" Mode="In" />
+    <Parameter Name="mota" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_suaNQH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manqh" Type="varchar" Mode="In" />
+    <Parameter Name="tennqh" Type="nvarchar" Mode="In" />
+    <Parameter Name="mota" Type="nvarchar" Mode="In" />
+    <Parameter Name="danhmuctc" Type="nvarchar" Mode="In" />
+    <Parameter Name="quyendm" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_suaNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="ngaysinh" Type="varchar" Mode="In" />
+    <Parameter Name="gioitinh" Type="nvarchar" Mode="In" />
+    <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="chucvu" Type="nvarchar" Mode="In" />
+    <Parameter Name="luongcb" Type="varchar" Mode="In" />
+    <Parameter Name="hsl" Type="varchar" Mode="In" />
+    <Parameter Name="thuclinh" Type="varchar" Mode="In" />
+    <Parameter Name="taikhoan" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_suaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+    <Parameter Name="tensp" Type="nvarchar" Mode="In" />
+    <Parameter Name="ngaysx" Type="varchar" Mode="In" />
+    <Parameter Name="ngayhh" Type="varchar" Mode="In" />
+    <Parameter Name="ngaynhap" Type="varchar" Mode="In" />
+    <Parameter Name="nhasx" Type="nvarchar" Mode="In" />
+    <Parameter Name="slnhap" Type="varchar" Mode="In" />
+    <Parameter Name="dongianhap" Type="varchar" Mode="In" />
+    <Parameter Name="dongiabanle" Type="varchar" Mode="In" />
+    <Parameter Name="dongiabansi" Type="varchar" Mode="In" />
+    <Parameter Name="donvi" Type="nvarchar" Mode="In" />
+    <Parameter Name="giamgia" Type="varchar" Mode="In" />
+    <Parameter Name="anhsp" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ThemCN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="macn" Type="varchar" Mode="In" />
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="ngaytk" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_ThemHDB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdb" Type="varchar" Mode="In" />
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="makh" Type="varchar" Mode="In" />
+    <Parameter Name="ngaylaphd" Type="datetime" Mode="In" />
+    <Parameter Name="sl" Type="varchar" Mode="In" />
+    <Parameter Name="tongtien" Type="varchar" Mode="In" />
+    <Parameter Name="hinhthuctt" Type="nvarchar" Mode="In" />
+    <Parameter Name="dathanhtoan" Type="varchar" Mode="In" />
+    <Parameter Name="conno" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ThemHDBCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdb" Type="varchar" Mode="In" />
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+    <Parameter Name="sl" Type="varchar" Mode="In" />
+    <Parameter Name="dongiaban" Type="varchar" Mode="In" />
+    <Parameter Name="giamgia" Type="varchar" Mode="In" />
+    <Parameter Name="thanhtien" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ThemHDN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdn" Type="varchar" Mode="In" />
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+    <Parameter Name="ngaylaphd" Type="varchar" Mode="In" />
+    <Parameter Name="sl" Type="varchar" Mode="In" />
+    <Parameter Name="tongtien" Type="varchar" Mode="In" />
+    <Parameter Name="dathanhtoan" Type="varchar" Mode="In" />
+    <Parameter Name="conno" Type="varchar" Mode="In" />
+    <Parameter Name="ngayhhtt" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ThemHDNCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mahdn" Type="varchar" Mode="In" />
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+    <Parameter Name="sl" Type="varchar" Mode="In" />
+    <Parameter Name="dongianhap" Type="varchar" Mode="In" />
+    <Parameter Name="giamgia" Type="varchar" Mode="In" />
+    <Parameter Name="thanhtien" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_themHT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maht" Type="varchar" Mode="In" />
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="ngaytk" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_themHTCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maht" Type="varchar" Mode="In" />
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+    <Parameter Name="tensp" Type="nvarchar" Mode="In" />
+    <Parameter Name="ngaysx" Type="varchar" Mode="In" />
+    <Parameter Name="ngayhh" Type="varchar" Mode="In" />
+    <Parameter Name="ngaynhap" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_themkhachhang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="makh" Type="varchar" Mode="In" />
+    <Parameter Name="tenkh" Type="nvarchar" Mode="In" />
+    <Parameter Name="ngaysinh" Type="varchar" Mode="In" />
+    <Parameter Name="gioitinh" Type="nvarchar" Mode="In" />
+    <Parameter Name="socmnd" Type="varchar" Mode="In" />
+    <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="loaikh" Type="nvarchar" Mode="In" />
+    <Parameter Name="conno" Type="varchar" Mode="In" />
+    <Parameter Name="danhgia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ThemNCU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+    <Parameter Name="tenncu" Type="nvarchar" Mode="In" />
+    <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="quymoncu" Type="nvarchar" Mode="In" />
+    <Parameter Name="conno" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_themND" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mand" Type="varchar" Mode="In" />
+    <Parameter Name="mannd" Type="varchar" Mode="In" />
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="tennd" Type="nvarchar" Mode="In" />
+    <Parameter Name="tentk" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+    <Parameter Name="ngaytaotk" Type="varchar" Mode="In" />
+    <Parameter Name="danhmuctc" Type="nvarchar" Mode="In" />
+    <Parameter Name="quyendm" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_themnhanvien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="ngaysinh" Type="varchar" Mode="In" />
+    <Parameter Name="gioitinh" Type="nvarchar" Mode="In" />
+    <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="chucvu" Type="nvarchar" Mode="In" />
+    <Parameter Name="luongcb" Type="varchar" Mode="In" />
+    <Parameter Name="hsl" Type="varchar" Mode="In" />
+    <Parameter Name="thuclinh" Type="varchar" Mode="In" />
+    <Parameter Name="taikhoan" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_themNND" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mannd" Type="varchar" Mode="In" />
+    <Parameter Name="manqh" Type="varchar" Mode="In" />
+    <Parameter Name="tennnd" Type="nvarchar" Mode="In" />
+    <Parameter Name="mota" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_themNQH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manqh" Type="varchar" Mode="In" />
+    <Parameter Name="tennqh" Type="nvarchar" Mode="In" />
+    <Parameter Name="mota" Type="nvarchar" Mode="In" />
+    <Parameter Name="danhmuctc" Type="nvarchar" Mode="In" />
+    <Parameter Name="quyendm" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ThemSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+    <Parameter Name="tensp" Type="nvarchar" Mode="In" />
+    <Parameter Name="ngaysx" Type="varchar" Mode="In" />
+    <Parameter Name="ngayhh" Type="varchar" Mode="In" />
+    <Parameter Name="ngaynhap" Type="varchar" Mode="In" />
+    <Parameter Name="nhasx" Type="nvarchar" Mode="In" />
+    <Parameter Name="slnhap" Type="varchar" Mode="In" />
+    <Parameter Name="dongianhap" Type="varchar" Mode="In" />
+    <Parameter Name="dongiabanle" Type="varchar" Mode="In" />
+    <Parameter Name="dongiabansi" Type="varchar" Mode="In" />
+    <Parameter Name="donvi" Type="nvarchar" Mode="In" />
+    <Parameter Name="giamgia" Type="varchar" Mode="In" />
+    <Parameter Name="anhsp" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_themTC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="matc" Type="varchar" Mode="In" />
+    <Parameter Name="mand" Type="varchar" Mode="In" />
+    <Parameter Name="tentk" Type="varchar" Mode="In" />
+    <Parameter Name="landmkcuoi" Type="varchar" Mode="In" />
+    <Parameter Name="landncuoi" Type="varchar" Mode="In" />
+    <Parameter Name="danhmuctc" Type="nvarchar" Mode="In" />
+    <Parameter Name="thaotac" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_themTKCNCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="matkcn" Type="varchar" Mode="In" />
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_themTKDT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="matkdt" Type="varchar" Mode="In" />
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="ngaytk" Type="datetime" Mode="In" />
+    <Parameter Name="thangtk" Type="varchar" Mode="In" />
+    <Parameter Name="namtk" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemCN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="macn" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemDT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="madt" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemHDB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ngaylap" Type="varchar" Mode="In" />
+    <Parameter Name="thanglap" Type="varchar" Mode="In" />
+    <Parameter Name="namlap" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemHDN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ngaylap" Type="varchar" Mode="In" />
+    <Parameter Name="thanglap" Type="varchar" Mode="In" />
+    <Parameter Name="namlap" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemHT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+    <Parameter Name="maht" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemkh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="loaikh" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemNCU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="quymoncu" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemND" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mannd" Type="varchar" Mode="In" />
+    <Parameter Name="tennd" Type="nvarchar" Mode="In" />
+    <Parameter Name="ngaytaotk" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemNND" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manqh" Type="nvarchar" Mode="In" />
+    <Parameter Name="tennnd" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemNQH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tennqh" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemnv" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ten" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="chucvu" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+    <Parameter Name="tensp" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_timkiemTC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tentk" Type="varchar" Mode="In" />
+    <Parameter Name="landncuoi" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaCN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCN" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaCNtrenCNCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdCN" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaDT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="madt" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaHDB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdHDB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaHDBCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdHDB" Type="varchar" Mode="In" />
+    <Parameter Name="IdSP" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaHDBtrenHDBCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdHDB" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaHDN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdHDN" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaHDNCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdHDN" Type="varchar" Mode="In" />
+    <Parameter Name="IdSP" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaHDNtrenHDNCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdHDN" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaHT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maht" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_XoaHTCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maht" Type="varchar" Mode="In" />
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaHTtrenHTCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdHT" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_XoaKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdKH" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaKHtrenHDB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdKH" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaNCU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNCU" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaNCUtrenCN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNCU" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaNCUtrenHDN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mancu" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaNCUtrenSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idncu" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_XoaND" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdND" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_XoaNDtrenTruyCap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdND" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaNND" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mannd" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaNQH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manqh" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaNQHtrenNND" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manqh" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_XoaNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdNV" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaNVtrenCN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaNVtrenTKDT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="manv" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masp" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaSPtrenHDBCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdSP" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaSPtrenHDNCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdSP" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaSPtrenHTCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdSP" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_xoatatcadulieuKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_xoatatcadulieuNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_xoatatcaTC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_XoaTruyCap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdTC" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="QLBHDTModelStoreContainer">
+    <EntitySet Name="CNCHITIET" EntityType="Self.CNCHITIET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONGNO" EntityType="Self.CONGNO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOANHTHU" EntityType="Self.DOANHTHU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HANGTON" EntityType="Self.HANGTON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HDBANCHITIET" EntityType="Self.HDBANCHITIET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HDNHAPCHITIET" EntityType="Self.HDNHAPCHITIET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOADONBAN" EntityType="Self.HOADONBAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOADONNHAP" EntityType="Self.HOADONNHAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HTCHITIET" EntityType="Self.HTCHITIET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NGUOI_DUNG" EntityType="Self.NGUOI_DUNG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHACUNGUNG" EntityType="Self.NHACUNGUNG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHOM_NGUOI_DUNG" EntityType="Self.NHOM_NGUOI_DUNG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHOM_QUYEN_HAN" EntityType="Self.NHOM_QUYEN_HAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRUY_CAP" EntityType="Self.TRUY_CAP" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CNCHITIET_CONGNO" Association="Self.FK_CNCHITIET_CONGNO">
+      <End Role="CONGNO" EntitySet="CONGNO" />
+      <End Role="CNCHITIET" EntitySet="CNCHITIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CNCHITIET_NHACUNGUNG" Association="Self.FK_CNCHITIET_NHACUNGUNG">
+      <End Role="NHACUNGUNG" EntitySet="NHACUNGUNG" />
+      <End Role="CNCHITIET" EntitySet="CNCHITIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONGNO_NHANVIEN" Association="Self.FK_CONGNO_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="CONGNO" EntitySet="CONGNO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOANHTHU_NHANVIEN" Association="Self.FK_DOANHTHU_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="DOANHTHU" EntitySet="DOANHTHU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HANGTON_NHANVIEN" Association="Self.FK_HANGTON_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="HANGTON" EntitySet="HANGTON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDBANCHITIET_HOADONBAN" Association="Self.FK_HDBANCHITIET_HOADONBAN">
+      <End Role="HOADONBAN" EntitySet="HOADONBAN" />
+      <End Role="HDBANCHITIET" EntitySet="HDBANCHITIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDBANCHITIET_SANPHAM" Association="Self.FK_HDBANCHITIET_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+      <End Role="HDBANCHITIET" EntitySet="HDBANCHITIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDNHAPCHITIET_HOADONNHAP" Association="Self.FK_HDNHAPCHITIET_HOADONNHAP">
+      <End Role="HOADONNHAP" EntitySet="HOADONNHAP" />
+      <End Role="HDNHAPCHITIET" EntitySet="HDNHAPCHITIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDNHAPCHITIET_SANPHAM" Association="Self.FK_HDNHAPCHITIET_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+      <End Role="HDNHAPCHITIET" EntitySet="HDNHAPCHITIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADONBAN_KHACHHANG" Association="Self.FK_HOADONBAN_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="HOADONBAN" EntitySet="HOADONBAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADONBAN_NHANVIEN" Association="Self.FK_HOADONBAN_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="HOADONBAN" EntitySet="HOADONBAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADONNHAP_NHACUNGUNG" Association="Self.FK_HOADONNHAP_NHACUNGUNG">
+      <End Role="NHACUNGUNG" EntitySet="NHACUNGUNG" />
+      <End Role="HOADONNHAP" EntitySet="HOADONNHAP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADONNHAP_NHANVIEN" Association="Self.FK_HOADONNHAP_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="HOADONNHAP" EntitySet="HOADONNHAP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HTCHITIET_HANGTON" Association="Self.FK_HTCHITIET_HANGTON">
+      <End Role="HANGTON" EntitySet="HANGTON" />
+      <End Role="HTCHITIET" EntitySet="HTCHITIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HTCHITIET_SANPHAM" Association="Self.FK_HTCHITIET_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+      <End Role="HTCHITIET" EntitySet="HTCHITIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NGUOI_DUNG_NHAN_VIEN" Association="Self.FK_NGUOI_DUNG_NHAN_VIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="NGUOI_DUNG" EntitySet="NGUOI_DUNG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NGUOI_DUNG_NHOM_NGUOI_DUNG" Association="Self.FK_NGUOI_DUNG_NHOM_NGUOI_DUNG">
+      <End Role="NHOM_NGUOI_DUNG" EntitySet="NHOM_NGUOI_DUNG" />
+      <End Role="NGUOI_DUNG" EntitySet="NGUOI_DUNG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHOM_NGUOI_DUNG_NHOM_QUYEN_HAN" Association="Self.FK_NHOM_NGUOI_DUNG_NHOM_QUYEN_HAN">
+      <End Role="NHOM_QUYEN_HAN" EntitySet="NHOM_QUYEN_HAN" />
+      <End Role="NHOM_NGUOI_DUNG" EntitySet="NHOM_NGUOI_DUNG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SANPHAM_NHACUNGUNG" Association="Self.FK_SANPHAM_NHACUNGUNG">
+      <End Role="NHACUNGUNG" EntitySet="NHACUNGUNG" />
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRUY_CAP_NGUOI_DUNG" Association="Self.FK_TRUY_CAP_NGUOI_DUNG">
+      <End Role="NGUOI_DUNG" EntitySet="NGUOI_DUNG" />
+      <End Role="TRUY_CAP" EntitySet="TRUY_CAP" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

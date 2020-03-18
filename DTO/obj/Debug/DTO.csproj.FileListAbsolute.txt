@@ -1,0 +1,5 @@
+F:\LẬP TRÌNH QUẢN LÝ\QLKDDTDM\DTO\bin\Debug\DTO.dll
+F:\LẬP TRÌNH QUẢN LÝ\QLKDDTDM\DTO\bin\Debug\DTO.pdb
+F:\LẬP TRÌNH QUẢN LÝ\QLKDDTDM\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+F:\LẬP TRÌNH QUẢN LÝ\QLKDDTDM\DTO\obj\Debug\DTO.dll
+F:\LẬP TRÌNH QUẢN LÝ\QLKDDTDM\DTO\obj\Debug\DTO.pdb

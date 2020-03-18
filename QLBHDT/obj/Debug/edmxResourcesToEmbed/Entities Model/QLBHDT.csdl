@@ -1,0 +1,1790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBHDTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="QLBHDT_Entities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_CapnhatLanDMKcuoi">
+      <Parameter Name="mand" Mode="In" Type="String" />
+      <Parameter Name="landmkcuoi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatMK">
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="mk" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatnoKH">
+      <Parameter Name="makh" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatSLSanPham">
+      <Parameter Name="masp" Mode="In" Type="String" />
+      <Parameter Name="SL" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatThaotacTC">
+      <Parameter Name="matc" Mode="In" Type="String" />
+      <Parameter Name="danhmuctc" Mode="In" Type="String" />
+      <Parameter Name="thaotac" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatTKNV">
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="taikhoan" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiCN" ReturnType="Collection(QLBHDTModel.sp_hienthiCN_Result)" />
+    <FunctionImport Name="sp_hienthiHDB" ReturnType="Collection(QLBHDTModel.sp_hienthiHDB_Result)" />
+    <FunctionImport Name="sp_hienthiHDBCT" ReturnType="Collection(QLBHDTModel.sp_hienthiHDBCT_Result)" />
+    <FunctionImport Name="sp_hienthiHDBCTcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiHDBCTcuthe_Result)">
+      <Parameter Name="mahdb" Mode="In" Type="String" />
+      <Parameter Name="masp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiHDBcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiHDBcuthe_Result)">
+      <Parameter Name="IdHDB" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiHDN" ReturnType="Collection(QLBHDTModel.sp_hienthiHDN_Result)" />
+    <FunctionImport Name="sp_hienthiHDNCT" ReturnType="Collection(QLBHDTModel.sp_hienthiHDNCT_Result)" />
+    <FunctionImport Name="sp_hienthiHDNCTcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiHDNCTcuthe_Result)">
+      <Parameter Name="IdHDN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiHDNcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiHDNcuthe_Result)">
+      <Parameter Name="IdHDN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiHT" ReturnType="Collection(QLBHDTModel.sp_hienthiHT_Result)" />
+    <FunctionImport Name="sp_hienthikhachhang" ReturnType="Collection(QLBHDTModel.sp_hienthikhachhang_Result)" />
+    <FunctionImport Name="sp_hienthiNCU" ReturnType="Collection(QLBHDTModel.sp_hienthiNCU_Result)" />
+    <FunctionImport Name="sp_hienthiND" ReturnType="Collection(QLBHDTModel.sp_hienthiND_Result)" />
+    <FunctionImport Name="sp_hienthiNDtheoten" ReturnType="Collection(QLBHDTModel.sp_hienthiNDtheoten_Result)">
+      <Parameter Name="tennd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthinguoidungcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthinguoidungcuthe_Result)">
+      <Parameter Name="IdNV" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthinhacungungcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthinhacungungcuthe_Result)">
+      <Parameter Name="IdNCU" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthinhanvien" ReturnType="Collection(QLBHDTModel.sp_hienthinhanvien_Result)" />
+    <FunctionImport Name="sp_hienthinhanviencuthe" ReturnType="Collection(QLBHDTModel.sp_hienthinhanviencuthe_Result)">
+      <Parameter Name="IdNV" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiNND" ReturnType="Collection(QLBHDTModel.sp_hienthiNND_Result)" />
+    <FunctionImport Name="sp_hienthiNNDcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiNNDcuthe_Result)">
+      <Parameter Name="IdNND" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiNNDtheoten" ReturnType="Collection(QLBHDTModel.sp_hienthiNNDtheoten_Result)">
+      <Parameter Name="tennnd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiNQH" ReturnType="Collection(QLBHDTModel.sp_hienthiNQH_Result)" />
+    <FunctionImport Name="sp_hienthiNQHcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiNQHcuthe_Result)">
+      <Parameter Name="IdNQH" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiSP" ReturnType="Collection(QLBHDTModel.sp_hienthiSP_Result)" />
+    <FunctionImport Name="sp_hienthiSPcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiSPcuthe_Result)">
+      <Parameter Name="IdSP" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiTC" ReturnType="Collection(QLBHDTModel.sp_hienthiTC_Result)" />
+    <FunctionImport Name="sp_KiemtraHDBCTtrung" ReturnType="Collection(QLBHDTModel.sp_KiemtraHDBCTtrung_Result)">
+      <Parameter Name="mahdb" Mode="In" Type="String" />
+      <Parameter Name="masp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraHDBtrung" ReturnType="Collection(String)">
+      <Parameter Name="mahdb" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraHDNCTtrung" ReturnType="Collection(QLBHDTModel.sp_KiemtraHDNCTtrung_Result)">
+      <Parameter Name="mahdn" Mode="In" Type="String" />
+      <Parameter Name="masp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraHDNtrung" ReturnType="Collection(String)">
+      <Parameter Name="mahdn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Kiemtrakhtrung" ReturnType="Collection(String)">
+      <Parameter Name="makh" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraNCUtrung" ReturnType="Collection(String)">
+      <Parameter Name="mancu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraNDtrung" ReturnType="Collection(String)">
+      <Parameter Name="mand" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraNNDtrung" ReturnType="Collection(String)">
+      <Parameter Name="mannd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraNQHtrung" ReturnType="Collection(String)">
+      <Parameter Name="manqh" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Kiemtranvtrung" ReturnType="Collection(String)">
+      <Parameter Name="manv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraSPtrung" ReturnType="Collection(String)">
+      <Parameter Name="masp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraTCtrung" ReturnType="Collection(String)">
+      <Parameter Name="matc" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LayIdNV" ReturnType="Collection(String)">
+      <Parameter Name="mand" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LayTenNV" ReturnType="Collection(String)">
+      <Parameter Name="IdNV" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LayTTKH" ReturnType="Collection(QLBHDTModel.sp_LayTTKH_Result)">
+      <Parameter Name="IdKH" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LayTTNCU" ReturnType="Collection(QLBHDTModel.sp_LayTTNCU_Result)">
+      <Parameter Name="IdNCU" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LayTTSP" ReturnType="Collection(QLBHDTModel.sp_LayTTSP_Result)">
+      <Parameter Name="IdSP" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_suaHDB">
+      <Parameter Name="mahdb" Mode="In" Type="String" />
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="makh" Mode="In" Type="String" />
+      <Parameter Name="ngaylaphd" Mode="In" Type="DateTime" />
+      <Parameter Name="sl" Mode="In" Type="String" />
+      <Parameter Name="tongtien" Mode="In" Type="String" />
+      <Parameter Name="hinhthuctt" Mode="In" Type="String" />
+      <Parameter Name="dathanhtoan" Mode="In" Type="String" />
+      <Parameter Name="conno" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_suaHDBCT">
+      <Parameter Name="mahdb" Mode="In" Type="String" />
+      <Parameter Name="masp" Mode="In" Type="String" />
+      <Parameter Name="sl" Mode="In" Type="String" />
+      <Parameter Name="dongiaban" Mode="In" Type="String" />
+      <Parameter Name="giamgia" Mode="In" Type="String" />
+      <Parameter Name="thanhtien" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_suaHDN">
+      <Parameter Name="mahdn" Mode="In" Type="String" />
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="mancu" Mode="In" Type="String" />
+      <Parameter Name="ngaylaphd" Mode="In" Type="String" />
+      <Parameter Name="sl" Mode="In" Type="String" />
+      <Parameter Name="tongtien" Mode="In" Type="String" />
+      <Parameter Name="dathanhtoan" Mode="In" Type="String" />
+      <Parameter Name="conno" Mode="In" Type="String" />
+      <Parameter Name="ngayhhtt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_suaHDNCT">
+      <Parameter Name="mahdn" Mode="In" Type="String" />
+      <Parameter Name="masp" Mode="In" Type="String" />
+      <Parameter Name="sl" Mode="In" Type="String" />
+      <Parameter Name="dongianhap" Mode="In" Type="String" />
+      <Parameter Name="giamgia" Mode="In" Type="String" />
+      <Parameter Name="thanhtien" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_suaKH">
+      <Parameter Name="makh" Mode="In" Type="String" />
+      <Parameter Name="tenkh" Mode="In" Type="String" />
+      <Parameter Name="ngaysinh" Mode="In" Type="String" />
+      <Parameter Name="gioitinh" Mode="In" Type="String" />
+      <Parameter Name="socmnd" Mode="In" Type="String" />
+      <Parameter Name="diachi" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="loaikh" Mode="In" Type="String" />
+      <Parameter Name="conno" Mode="In" Type="String" />
+      <Parameter Name="danhgia" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_suamanvtrongbangND">
+      <Parameter Name="IdNV" Mode="In" Type="String" />
+      <Parameter Name="IdND" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_suaNCU">
+      <Parameter Name="mancu" Mode="In" Type="String" />
+      <Parameter Name="tenncu" Mode="In" Type="String" />
+      <Parameter Name="diachi" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="quymoncu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_suaND">
+      <Parameter Name="mand" Mode="In" Type="String" />
+      <Parameter Name="mannd" Mode="In" Type="String" />
+      <Parameter Name="danhmuctc" Mode="In" Type="String" />
+      <Parameter Name="quyendm" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_suaNND">
+      <Parameter Name="mannd" Mode="In" Type="String" />
+      <Parameter Name="manqh" Mode="In" Type="String" />
+      <Parameter Name="tennnd" Mode="In" Type="String" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_suaNQH">
+      <Parameter Name="manqh" Mode="In" Type="String" />
+      <Parameter Name="tennqh" Mode="In" Type="String" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+      <Parameter Name="danhmuctc" Mode="In" Type="String" />
+      <Parameter Name="quyendm" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_suaNV">
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="ngaysinh" Mode="In" Type="String" />
+      <Parameter Name="gioitinh" Mode="In" Type="String" />
+      <Parameter Name="diachi" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="chucvu" Mode="In" Type="String" />
+      <Parameter Name="luongcb" Mode="In" Type="String" />
+      <Parameter Name="hsl" Mode="In" Type="String" />
+      <Parameter Name="thuclinh" Mode="In" Type="String" />
+      <Parameter Name="taikhoan" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_suaSP">
+      <Parameter Name="masp" Mode="In" Type="String" />
+      <Parameter Name="mancu" Mode="In" Type="String" />
+      <Parameter Name="tensp" Mode="In" Type="String" />
+      <Parameter Name="ngaysx" Mode="In" Type="String" />
+      <Parameter Name="ngayhh" Mode="In" Type="String" />
+      <Parameter Name="ngaynhap" Mode="In" Type="String" />
+      <Parameter Name="nhasx" Mode="In" Type="String" />
+      <Parameter Name="slnhap" Mode="In" Type="String" />
+      <Parameter Name="dongianhap" Mode="In" Type="String" />
+      <Parameter Name="dongiabanle" Mode="In" Type="String" />
+      <Parameter Name="dongiabansi" Mode="In" Type="String" />
+      <Parameter Name="donvi" Mode="In" Type="String" />
+      <Parameter Name="giamgia" Mode="In" Type="String" />
+      <Parameter Name="anhsp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ThemHDB">
+      <Parameter Name="mahdb" Mode="In" Type="String" />
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="makh" Mode="In" Type="String" />
+      <Parameter Name="ngaylaphd" Mode="In" Type="DateTime" />
+      <Parameter Name="sl" Mode="In" Type="String" />
+      <Parameter Name="tongtien" Mode="In" Type="String" />
+      <Parameter Name="hinhthuctt" Mode="In" Type="String" />
+      <Parameter Name="dathanhtoan" Mode="In" Type="String" />
+      <Parameter Name="conno" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ThemHDBCT">
+      <Parameter Name="mahdb" Mode="In" Type="String" />
+      <Parameter Name="masp" Mode="In" Type="String" />
+      <Parameter Name="sl" Mode="In" Type="String" />
+      <Parameter Name="dongiaban" Mode="In" Type="String" />
+      <Parameter Name="giamgia" Mode="In" Type="String" />
+      <Parameter Name="thanhtien" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ThemHDN">
+      <Parameter Name="mahdn" Mode="In" Type="String" />
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="mancu" Mode="In" Type="String" />
+      <Parameter Name="ngaylaphd" Mode="In" Type="String" />
+      <Parameter Name="sl" Mode="In" Type="String" />
+      <Parameter Name="tongtien" Mode="In" Type="String" />
+      <Parameter Name="dathanhtoan" Mode="In" Type="String" />
+      <Parameter Name="conno" Mode="In" Type="String" />
+      <Parameter Name="ngayhhtt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ThemHDNCT">
+      <Parameter Name="mahdn" Mode="In" Type="String" />
+      <Parameter Name="masp" Mode="In" Type="String" />
+      <Parameter Name="sl" Mode="In" Type="String" />
+      <Parameter Name="dongianhap" Mode="In" Type="String" />
+      <Parameter Name="giamgia" Mode="In" Type="String" />
+      <Parameter Name="thanhtien" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_themkhachhang">
+      <Parameter Name="makh" Mode="In" Type="String" />
+      <Parameter Name="tenkh" Mode="In" Type="String" />
+      <Parameter Name="ngaysinh" Mode="In" Type="String" />
+      <Parameter Name="gioitinh" Mode="In" Type="String" />
+      <Parameter Name="socmnd" Mode="In" Type="String" />
+      <Parameter Name="diachi" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="loaikh" Mode="In" Type="String" />
+      <Parameter Name="conno" Mode="In" Type="String" />
+      <Parameter Name="danhgia" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ThemNCU">
+      <Parameter Name="mancu" Mode="In" Type="String" />
+      <Parameter Name="tenncu" Mode="In" Type="String" />
+      <Parameter Name="diachi" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="quymoncu" Mode="In" Type="String" />
+      <Parameter Name="conno" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_themND">
+      <Parameter Name="mand" Mode="In" Type="String" />
+      <Parameter Name="mannd" Mode="In" Type="String" />
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="tennd" Mode="In" Type="String" />
+      <Parameter Name="tentk" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="ngaytaotk" Mode="In" Type="String" />
+      <Parameter Name="danhmuctc" Mode="In" Type="String" />
+      <Parameter Name="quyendm" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_themnhanvien">
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="ngaysinh" Mode="In" Type="String" />
+      <Parameter Name="gioitinh" Mode="In" Type="String" />
+      <Parameter Name="diachi" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="chucvu" Mode="In" Type="String" />
+      <Parameter Name="luongcb" Mode="In" Type="String" />
+      <Parameter Name="hsl" Mode="In" Type="String" />
+      <Parameter Name="thuclinh" Mode="In" Type="String" />
+      <Parameter Name="taikhoan" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_themNND">
+      <Parameter Name="mannd" Mode="In" Type="String" />
+      <Parameter Name="manqh" Mode="In" Type="String" />
+      <Parameter Name="tennnd" Mode="In" Type="String" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_themNQH">
+      <Parameter Name="manqh" Mode="In" Type="String" />
+      <Parameter Name="tennqh" Mode="In" Type="String" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+      <Parameter Name="danhmuctc" Mode="In" Type="String" />
+      <Parameter Name="quyendm" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ThemSP">
+      <Parameter Name="masp" Mode="In" Type="String" />
+      <Parameter Name="mancu" Mode="In" Type="String" />
+      <Parameter Name="tensp" Mode="In" Type="String" />
+      <Parameter Name="ngaysx" Mode="In" Type="String" />
+      <Parameter Name="ngayhh" Mode="In" Type="String" />
+      <Parameter Name="ngaynhap" Mode="In" Type="String" />
+      <Parameter Name="nhasx" Mode="In" Type="String" />
+      <Parameter Name="slnhap" Mode="In" Type="String" />
+      <Parameter Name="dongianhap" Mode="In" Type="String" />
+      <Parameter Name="dongiabanle" Mode="In" Type="String" />
+      <Parameter Name="dongiabansi" Mode="In" Type="String" />
+      <Parameter Name="donvi" Mode="In" Type="String" />
+      <Parameter Name="giamgia" Mode="In" Type="String" />
+      <Parameter Name="anhsp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_themTC">
+      <Parameter Name="matc" Mode="In" Type="String" />
+      <Parameter Name="mand" Mode="In" Type="String" />
+      <Parameter Name="tentk" Mode="In" Type="String" />
+      <Parameter Name="landmkcuoi" Mode="In" Type="String" />
+      <Parameter Name="landncuoi" Mode="In" Type="String" />
+      <Parameter Name="danhmuctc" Mode="In" Type="String" />
+      <Parameter Name="thaotac" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemHDB" ReturnType="Collection(QLBHDTModel.sp_timkiemHDB_Result)">
+      <Parameter Name="ngaylap" Mode="In" Type="String" />
+      <Parameter Name="thanglap" Mode="In" Type="String" />
+      <Parameter Name="namlap" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemHDN" ReturnType="Collection(QLBHDTModel.sp_timkiemHDN_Result)">
+      <Parameter Name="ngaylap" Mode="In" Type="String" />
+      <Parameter Name="thanglap" Mode="In" Type="String" />
+      <Parameter Name="namlap" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemkh" ReturnType="Collection(QLBHDTModel.sp_timkiemkh_Result)">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="loaikh" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemNCU" ReturnType="Collection(QLBHDTModel.sp_timkiemNCU_Result)">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="quymoncu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemND" ReturnType="Collection(QLBHDTModel.sp_timkiemND_Result)">
+      <Parameter Name="mannd" Mode="In" Type="String" />
+      <Parameter Name="tennd" Mode="In" Type="String" />
+      <Parameter Name="ngaytaotk" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemNND" ReturnType="Collection(QLBHDTModel.sp_timkiemNND_Result)">
+      <Parameter Name="manqh" Mode="In" Type="String" />
+      <Parameter Name="tennnd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemNQH" ReturnType="Collection(QLBHDTModel.sp_timkiemNQH_Result)">
+      <Parameter Name="tennqh" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemnv" ReturnType="Collection(QLBHDTModel.sp_timkiemnv_Result)">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="chucvu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemSP" ReturnType="Collection(QLBHDTModel.sp_timkiemSP_Result)">
+      <Parameter Name="mancu" Mode="In" Type="String" />
+      <Parameter Name="tensp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemTC" ReturnType="Collection(QLBHDTModel.sp_timkiemTC_Result)">
+      <Parameter Name="tentk" Mode="In" Type="String" />
+      <Parameter Name="landncuoi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaCN">
+      <Parameter Name="IdCN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaHDB">
+      <Parameter Name="IdHDB" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaHDBCT">
+      <Parameter Name="IdHDB" Mode="In" Type="String" />
+      <Parameter Name="IdSP" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaHDBtrenHDBCT">
+      <Parameter Name="IdHDB" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaHDN">
+      <Parameter Name="IdHDN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaHDNCT">
+      <Parameter Name="IdHDN" Mode="In" Type="String" />
+      <Parameter Name="IdSP" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaHDNtrenHDNCT">
+      <Parameter Name="IdHDN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_XoaKH">
+      <Parameter Name="IdKH" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaKHtrenHDB">
+      <Parameter Name="IdKH" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaNCU">
+      <Parameter Name="IdNCU" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaNCUtrenCN">
+      <Parameter Name="IdNCU" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaNCUtrenHDN">
+      <Parameter Name="mancu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaNCUtrenSP">
+      <Parameter Name="idncu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_XoaND">
+      <Parameter Name="IdND" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_XoaNDtrenTruyCap">
+      <Parameter Name="IdND" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaNND">
+      <Parameter Name="mannd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaNQH">
+      <Parameter Name="manqh" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaNQHtrenNND">
+      <Parameter Name="manqh" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_XoaNV">
+      <Parameter Name="IdNV" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaNVtrenHDB">
+      <Parameter Name="manv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaNVtrenHDN">
+      <Parameter Name="manv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaSP">
+      <Parameter Name="masp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaSPtrenHDBCT">
+      <Parameter Name="IdSP" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaSPtrenHDNCT">
+      <Parameter Name="IdSP" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaSPtrenHT">
+      <Parameter Name="IdSP" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoatatcadulieuKH" />
+    <FunctionImport Name="sp_xoatatcadulieuNV" />
+    <FunctionImport Name="sp_xoatatcaTC" />
+    <FunctionImport Name="sp_XoaTruyCap">
+      <Parameter Name="IdTC" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="CNCHITIETs" EntityType="QLBHDTModel.CNCHITIET" />
+    <EntitySet Name="CONGNOes" EntityType="QLBHDTModel.CONGNO" />
+    <EntitySet Name="DOANHTHUs" EntityType="QLBHDTModel.DOANHTHU" />
+    <EntitySet Name="HANGTONs" EntityType="QLBHDTModel.HANGTON" />
+    <EntitySet Name="HDBANCHITIETs" EntityType="QLBHDTModel.HDBANCHITIET" />
+    <EntitySet Name="HDNHAPCHITIETs" EntityType="QLBHDTModel.HDNHAPCHITIET" />
+    <EntitySet Name="HOADONBANs" EntityType="QLBHDTModel.HOADONBAN" />
+    <EntitySet Name="HOADONNHAPs" EntityType="QLBHDTModel.HOADONNHAP" />
+    <EntitySet Name="HTCHITIETs" EntityType="QLBHDTModel.HTCHITIET" />
+    <EntitySet Name="KHACHHANGs" EntityType="QLBHDTModel.KHACHHANG" />
+    <EntitySet Name="NGUOI_DUNG" EntityType="QLBHDTModel.NGUOI_DUNG" />
+    <EntitySet Name="NHACUNGUNGs" EntityType="QLBHDTModel.NHACUNGUNG" />
+    <EntitySet Name="NHANVIENs" EntityType="QLBHDTModel.NHANVIEN" />
+    <EntitySet Name="NHOM_NGUOI_DUNG" EntityType="QLBHDTModel.NHOM_NGUOI_DUNG" />
+    <EntitySet Name="NHOM_QUYEN_HAN" EntityType="QLBHDTModel.NHOM_QUYEN_HAN" />
+    <EntitySet Name="SANPHAMs" EntityType="QLBHDTModel.SANPHAM" />
+    <EntitySet Name="TRUY_CAP" EntityType="QLBHDTModel.TRUY_CAP" />
+    <AssociationSet Name="FK_CNCHITIET_CONGNO" Association="QLBHDTModel.FK_CNCHITIET_CONGNO">
+      <End Role="CONGNO" EntitySet="CONGNOes" />
+      <End Role="CNCHITIET" EntitySet="CNCHITIETs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CNCHITIET_NHACUNGUNG" Association="QLBHDTModel.FK_CNCHITIET_NHACUNGUNG">
+      <End Role="NHACUNGUNG" EntitySet="NHACUNGUNGs" />
+      <End Role="CNCHITIET" EntitySet="CNCHITIETs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONGNO_NHANVIEN" Association="QLBHDTModel.FK_CONGNO_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="CONGNO" EntitySet="CONGNOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOANHTHU_NHANVIEN" Association="QLBHDTModel.FK_DOANHTHU_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="DOANHTHU" EntitySet="DOANHTHUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HANGTON_NHANVIEN" Association="QLBHDTModel.FK_HANGTON_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="HANGTON" EntitySet="HANGTONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HTCHITIET_HANGTON" Association="QLBHDTModel.FK_HTCHITIET_HANGTON">
+      <End Role="HANGTON" EntitySet="HANGTONs" />
+      <End Role="HTCHITIET" EntitySet="HTCHITIETs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDBANCHITIET_HOADONBAN" Association="QLBHDTModel.FK_HDBANCHITIET_HOADONBAN">
+      <End Role="HOADONBAN" EntitySet="HOADONBANs" />
+      <End Role="HDBANCHITIET" EntitySet="HDBANCHITIETs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDBANCHITIET_SANPHAM" Association="QLBHDTModel.FK_HDBANCHITIET_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="HDBANCHITIET" EntitySet="HDBANCHITIETs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDNHAPCHITIET_HOADONNHAP" Association="QLBHDTModel.FK_HDNHAPCHITIET_HOADONNHAP">
+      <End Role="HOADONNHAP" EntitySet="HOADONNHAPs" />
+      <End Role="HDNHAPCHITIET" EntitySet="HDNHAPCHITIETs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HDNHAPCHITIET_SANPHAM" Association="QLBHDTModel.FK_HDNHAPCHITIET_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="HDNHAPCHITIET" EntitySet="HDNHAPCHITIETs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADONBAN_KHACHHANG" Association="QLBHDTModel.FK_HOADONBAN_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="HOADONBAN" EntitySet="HOADONBANs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADONBAN_NHANVIEN" Association="QLBHDTModel.FK_HOADONBAN_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="HOADONBAN" EntitySet="HOADONBANs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADONNHAP_NHACUNGUNG" Association="QLBHDTModel.FK_HOADONNHAP_NHACUNGUNG">
+      <End Role="NHACUNGUNG" EntitySet="NHACUNGUNGs" />
+      <End Role="HOADONNHAP" EntitySet="HOADONNHAPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADONNHAP_NHANVIEN" Association="QLBHDTModel.FK_HOADONNHAP_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="HOADONNHAP" EntitySet="HOADONNHAPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HTCHITIET_SANPHAM" Association="QLBHDTModel.FK_HTCHITIET_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="HTCHITIET" EntitySet="HTCHITIETs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NGUOI_DUNG_NHAN_VIEN" Association="QLBHDTModel.FK_NGUOI_DUNG_NHAN_VIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="NGUOI_DUNG" EntitySet="NGUOI_DUNG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NGUOI_DUNG_NHOM_NGUOI_DUNG" Association="QLBHDTModel.FK_NGUOI_DUNG_NHOM_NGUOI_DUNG">
+      <End Role="NHOM_NGUOI_DUNG" EntitySet="NHOM_NGUOI_DUNG" />
+      <End Role="NGUOI_DUNG" EntitySet="NGUOI_DUNG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRUY_CAP_NGUOI_DUNG" Association="QLBHDTModel.FK_TRUY_CAP_NGUOI_DUNG">
+      <End Role="NGUOI_DUNG" EntitySet="NGUOI_DUNG" />
+      <End Role="TRUY_CAP" EntitySet="TRUY_CAP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SANPHAM_NHACUNGUNG" Association="QLBHDTModel.FK_SANPHAM_NHACUNGUNG">
+      <End Role="NHACUNGUNG" EntitySet="NHACUNGUNGs" />
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHOM_NGUOI_DUNG_NHOM_QUYEN_HAN" Association="QLBHDTModel.FK_NHOM_NGUOI_DUNG_NHOM_QUYEN_HAN">
+      <End Role="NHOM_QUYEN_HAN" EntitySet="NHOM_QUYEN_HAN" />
+      <End Role="NHOM_NGUOI_DUNG" EntitySet="NHOM_NGUOI_DUNG" />
+    </AssociationSet>
+    <FunctionImport Name="sp_CapnhatNgayTKCN">
+      <Parameter Name="macn" Mode="In" Type="String" />
+      <Parameter Name="ngaytk" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatNgayTKHT">
+      <Parameter Name="maht" Mode="In" Type="String" />
+      <Parameter Name="ngaytk" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatnoNCU">
+      <Parameter Name="mancu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatNotrenHDB">
+      <Parameter Name="mahdb" Mode="In" Type="String" />
+      <Parameter Name="conno" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatNotrenHDN">
+      <Parameter Name="mahdn" Mode="In" Type="String" />
+      <Parameter Name="conno" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatSLSPtrenHDB">
+      <Parameter Name="mahdb" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatSLSPtrenHDN">
+      <Parameter Name="mahdn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatTKCNCT">
+      <Parameter Name="macn" Mode="In" Type="String" />
+      <Parameter Name="mancu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatTKDT">
+      <Parameter Name="madt" Mode="In" Type="String" />
+      <Parameter Name="thangtk" Mode="In" Type="String" />
+      <Parameter Name="namtk" Mode="In" Type="String" />
+      <Parameter Name="ngaytk" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatTKHTCT">
+      <Parameter Name="maht" Mode="In" Type="String" />
+      <Parameter Name="masp" Mode="In" Type="String" />
+      <Parameter Name="SL" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatTTtrenHDB">
+      <Parameter Name="mahdb" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatTTtrenHDN">
+      <Parameter Name="mahdn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CapnhatTTtrenSP">
+      <Parameter Name="masp" Mode="In" Type="String" />
+      <Parameter Name="nhasx" Mode="In" Type="String" />
+      <Parameter Name="sl" Mode="In" Type="String" />
+      <Parameter Name="dongianhap" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiCNCT" ReturnType="Collection(QLBHDTModel.sp_hienthiCNCT_Result)" />
+    <FunctionImport Name="sp_hienthiCNCTcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiCNCTcuthe_Result)">
+      <Parameter Name="IdCN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiCNcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiCNcuthe_Result)">
+      <Parameter Name="IdCN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiDT" ReturnType="Collection(QLBHDTModel.sp_hienthiDT_Result)" />
+    <FunctionImport Name="sp_hienthiDTcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiDTcuthe_Result)">
+      <Parameter Name="IdDT" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiHDBCThientai" ReturnType="Collection(QLBHDTModel.sp_hienthiHDBCThientai_Result)">
+      <Parameter Name="mahdb" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiHDBCTLenBC" ReturnType="Collection(QLBHDTModel.sp_hienthiHDBCTLenBC_Result)">
+      <Parameter Name="mahdb" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiHDNCTLenBC" ReturnType="Collection(QLBHDTModel.sp_hienthiHDNCTLenBC_Result)">
+      <Parameter Name="mahdn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiHTCT" ReturnType="Collection(QLBHDTModel.sp_hienthiHTCT_Result)" />
+    <FunctionImport Name="sp_hienthiHTCTcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiHTCTcuthe_Result)">
+      <Parameter Name="IdHT" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiHTCTLenBC" ReturnType="Collection(QLBHDTModel.sp_hienthiHTCTLenBC_Result)">
+      <Parameter Name="maht" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiHTcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiHTcuthe_Result)">
+      <Parameter Name="IdHT" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiKHcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiKHcuthe_Result)">
+      <Parameter Name="IdKH" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_hienthiNCUcuthe" ReturnType="Collection(QLBHDTModel.sp_hienthiNCUcuthe_Result)">
+      <Parameter Name="IdNCU" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraCNCTtrung" ReturnType="Collection(QLBHDTModel.sp_KiemtraCNCTtrung_Result)">
+      <Parameter Name="macn" Mode="In" Type="String" />
+      <Parameter Name="mancu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraCNtrung" ReturnType="Collection(String)">
+      <Parameter Name="macn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraDTtrung" ReturnType="Collection(String)">
+      <Parameter Name="madt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraHTCTtrung" ReturnType="Collection(QLBHDTModel.sp_KiemtraHTCTtrung_Result)">
+      <Parameter Name="maht" Mode="In" Type="String" />
+      <Parameter Name="masp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KiemtraHTtrung" ReturnType="Collection(String)">
+      <Parameter Name="maht" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KTHDBTThang" ReturnType="Collection(String)">
+      <Parameter Name="thang" Mode="In" Type="String" />
+      <Parameter Name="nam" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KTTKCNTT" ReturnType="Collection(String)">
+      <Parameter Name="thangtk" Mode="In" Type="String" />
+      <Parameter Name="namtk" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KTTKDTDT" ReturnType="Collection(String)">
+      <Parameter Name="thangtk" Mode="In" Type="String" />
+      <Parameter Name="namtk" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_KTTKHTTT" ReturnType="Collection(String)">
+      <Parameter Name="thangtk" Mode="In" Type="String" />
+      <Parameter Name="namtk" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LayMacnTheoMaNV" ReturnType="Collection(String)">
+      <Parameter Name="manv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LayMadtTheoMaNV" ReturnType="Collection(String)">
+      <Parameter Name="manv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LayMahdbTheoMaNV" ReturnType="Collection(String)">
+      <Parameter Name="manv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LayMahdnTheoMaNV" ReturnType="Collection(String)">
+      <Parameter Name="manv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_LayMahtTheoMaNV" ReturnType="Collection(String)">
+      <Parameter Name="manv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SPBanTrongThang" ReturnType="Collection(String)">
+      <Parameter Name="thangtk" Mode="In" Type="String" />
+      <Parameter Name="namtk" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ThemCN">
+      <Parameter Name="macn" Mode="In" Type="String" />
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="ngaytk" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_themHT">
+      <Parameter Name="maht" Mode="In" Type="String" />
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="ngaytk" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_themHTCT">
+      <Parameter Name="maht" Mode="In" Type="String" />
+      <Parameter Name="masp" Mode="In" Type="String" />
+      <Parameter Name="tensp" Mode="In" Type="String" />
+      <Parameter Name="ngaysx" Mode="In" Type="String" />
+      <Parameter Name="ngayhh" Mode="In" Type="String" />
+      <Parameter Name="ngaynhap" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_themTKCNCT">
+      <Parameter Name="matkcn" Mode="In" Type="String" />
+      <Parameter Name="mancu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_themTKDT">
+      <Parameter Name="matkdt" Mode="In" Type="String" />
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="ngaytk" Mode="In" Type="DateTime" />
+      <Parameter Name="thangtk" Mode="In" Type="String" />
+      <Parameter Name="namtk" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemCN" ReturnType="Collection(QLBHDTModel.sp_timkiemCN_Result)">
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="macn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemDT" ReturnType="Collection(QLBHDTModel.sp_timkiemDT_Result)">
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="madt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_timkiemHT" ReturnType="Collection(QLBHDTModel.sp_timkiemHT_Result)">
+      <Parameter Name="manv" Mode="In" Type="String" />
+      <Parameter Name="maht" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaCNtrenCNCT">
+      <Parameter Name="IdCN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaDT">
+      <Parameter Name="madt" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaHT">
+      <Parameter Name="maht" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_XoaHTCT">
+      <Parameter Name="maht" Mode="In" Type="String" />
+      <Parameter Name="masp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaHTtrenHTCT">
+      <Parameter Name="IdHT" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaNVtrenCN">
+      <Parameter Name="manv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaNVtrenTKDT">
+      <Parameter Name="manv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaSPtrenHTCT">
+      <Parameter Name="IdSP" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_hienthiCN_Result">
+    <Property Type="String" Name="IdCN" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNCU" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="500" />
+    <Property Type="Double" Name="Conno" Nullable="false" />
+    <Property Type="String" Name="NgayHHtra" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayTK" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHDB_Result">
+    <Property Type="String" Name="IdHDB" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdKH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayLapHD" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Tongtien" Nullable="true" />
+    <Property Type="String" Name="HinhThucTT" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Dathanhtoan" Nullable="true" />
+    <Property Type="Double" Name="Conno" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHDBCT_Result">
+    <Property Type="String" Name="IdHDB" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="SL" Nullable="false" />
+    <Property Type="Double" Name="Dongiaban" Nullable="false" />
+    <Property Type="Double" Name="Giamgia" Nullable="false" />
+    <Property Type="Double" Name="Thanhtien" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHDBCTcuthe_Result">
+    <Property Type="String" Name="IdHDB" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="SL" Nullable="false" />
+    <Property Type="Double" Name="Dongiaban" Nullable="false" />
+    <Property Type="Double" Name="Giamgia" Nullable="false" />
+    <Property Type="Double" Name="Thanhtien" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHDBcuthe_Result">
+    <Property Type="String" Name="IdHDB" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdKH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayLapHD" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Tongtien" Nullable="true" />
+    <Property Type="String" Name="HinhThucTT" Nullable="true" MaxLength="100" />
+    <Property Type="Double" Name="Dathanhtoan" Nullable="true" />
+    <Property Type="Double" Name="Conno" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHDN_Result">
+    <Property Type="String" Name="IdHDN" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayLapHD" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Tongtien" Nullable="true" />
+    <Property Type="Double" Name="Dathanhtoan" Nullable="true" />
+    <Property Type="Double" Name="Conno" Nullable="true" />
+    <Property Type="String" Name="NgayHHTT" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHDNCT_Result">
+    <Property Type="String" Name="IdHDN" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="SL" Nullable="false" />
+    <Property Type="Double" Name="Dongianhap" Nullable="false" />
+    <Property Type="Double" Name="Giamgia" Nullable="false" />
+    <Property Type="Double" Name="Thanhtien" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHDNCTcuthe_Result">
+    <Property Type="String" Name="IdHDN" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="SL" Nullable="false" />
+    <Property Type="Double" Name="Dongianhap" Nullable="false" />
+    <Property Type="Double" Name="Giamgia" Nullable="false" />
+    <Property Type="Double" Name="Thanhtien" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHDNcuthe_Result">
+    <Property Type="String" Name="IdHDN" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayLapHD" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Tongtien" Nullable="true" />
+    <Property Type="Double" Name="Dathanhtoan" Nullable="true" />
+    <Property Type="Double" Name="Conno" Nullable="true" />
+    <Property Type="String" Name="NgayHHTT" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHT_Result">
+    <Property Type="String" Name="IdHT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenSP" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NgaySX" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayHH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayNhap" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="SLCon" Nullable="false" />
+    <Property Type="String" Name="NgayTK" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthikhachhang_Result">
+    <Property Type="String" Name="IdKH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenKH" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NgaySinh" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gioitinh" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SoCMND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LoaiKH" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Conno" Nullable="true" />
+    <Property Type="String" Name="Danhgia" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiNCU_Result">
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNCU" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="QuyMoNCU" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiND_Result">
+    <Property Type="String" Name="IdND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenND" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TenTK" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PassWord" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="NgayTaoTK" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DanhmucTC" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="QuyenDM" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiNDtheoten_Result">
+    <Property Type="String" Name="IdND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenND" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TenTK" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PassWord" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="NgayTaoTK" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DanhmucTC" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="QuyenDM" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthinguoidungcuthe_Result">
+    <Property Type="String" Name="IdND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenND" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TenTK" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PassWord" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="NgayTaoTK" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DanhmucTC" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="QuyenDM" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthinhacungungcuthe_Result">
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNCU" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="QuyMoNCU" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthinhanvien_Result">
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNV" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NgaySinh" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gioitinh" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ChucVu" Nullable="false" MaxLength="100" />
+    <Property Type="Double" Name="LuongCB" Nullable="false" />
+    <Property Type="Double" Name="hsl" Nullable="false" />
+    <Property Type="String" Name="Taikhoan" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthinhanviencuthe_Result">
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNV" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NgaySinh" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gioitinh" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ChucVu" Nullable="false" MaxLength="100" />
+    <Property Type="Double" Name="LuongCB" Nullable="false" />
+    <Property Type="Double" Name="hsl" Nullable="false" />
+    <Property Type="String" Name="Taikhoan" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiNND_Result">
+    <Property Type="String" Name="IdNND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNhomQH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNND" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="MoTaNND" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiNNDcuthe_Result">
+    <Property Type="String" Name="IdNND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNhomQH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNND" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="MoTaNND" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiNNDtheoten_Result">
+    <Property Type="String" Name="IdNND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNhomQH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNND" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="MoTaNND" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiNQH_Result">
+    <Property Type="String" Name="IdNQH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNQH" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="MoTa" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="DanhmucTC" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="QuyenDM" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiNQHcuthe_Result">
+    <Property Type="String" Name="IdNQH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNQH" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="MoTa" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="DanhmucTC" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="QuyenDM" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiSP_Result">
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenSP" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="NgaySX" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayHH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayNhap" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NhaSX" Nullable="false" MaxLength="200" />
+    <Property Type="Double" Name="SLNhap" Nullable="false" />
+    <Property Type="Double" Name="DonGiaNhap" Nullable="false" />
+    <Property Type="Double" Name="DonGiaBanLe" Nullable="false" />
+    <Property Type="Double" Name="DonGiaBanSi" Nullable="false" />
+    <Property Type="String" Name="Donvi" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="GiamGia" Nullable="true" />
+    <Property Type="String" Name="AnhSP" Nullable="true" MaxLength="1000" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiSPcuthe_Result">
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenSP" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="NgaySX" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayHH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayNhap" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NhaSX" Nullable="false" MaxLength="200" />
+    <Property Type="Double" Name="SLNhap" Nullable="false" />
+    <Property Type="Double" Name="DonGiaNhap" Nullable="false" />
+    <Property Type="Double" Name="DonGiaBanLe" Nullable="false" />
+    <Property Type="Double" Name="DonGiaBanSi" Nullable="false" />
+    <Property Type="String" Name="Donvi" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="GiamGia" Nullable="true" />
+    <Property Type="String" Name="AnhSP" Nullable="true" MaxLength="1000" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiTC_Result">
+    <Property Type="String" Name="IdTC" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenTK" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LanDMKCuoi" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LanDNCuoi" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DanhmucTC" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Thaotac" Nullable="true" MaxLength="4000" />
+  </ComplexType>
+  <ComplexType Name="sp_KiemtraHDBCTtrung_Result">
+    <Property Type="String" Name="IdHDB" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_KiemtraHDNCTtrung_Result">
+    <Property Type="String" Name="IdHDN" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_LayTTKH_Result">
+    <Property Type="String" Name="TenKH" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_LayTTNCU_Result">
+    <Property Type="String" Name="TenNCU" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_LayTTSP_Result">
+    <Property Type="String" Name="TenSP" Nullable="false" MaxLength="200" />
+    <Property Type="Double" Name="DonGiaBanLe" Nullable="false" />
+    <Property Type="Double" Name="DonGiaBanSi" Nullable="false" />
+    <Property Type="Double" Name="GiamGia" Nullable="true" />
+    <Property Type="Double" Name="SLNhap" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemHDB_Result">
+    <Property Type="String" Name="IdHDB" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="SL" Nullable="false" />
+    <Property Type="Double" Name="Dongiaban" Nullable="false" />
+    <Property Type="Double" Name="Giamgia" Nullable="false" />
+    <Property Type="Double" Name="Thanhtien" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemHDN_Result">
+    <Property Type="String" Name="IdHDN" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="SL" Nullable="false" />
+    <Property Type="Double" Name="Dongianhap" Nullable="false" />
+    <Property Type="Double" Name="Giamgia" Nullable="false" />
+    <Property Type="Double" Name="Thanhtien" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemkh_Result">
+    <Property Type="String" Name="IdKH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenKH" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NgaySinh" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gioitinh" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SoCMND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LoaiKH" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Conno" Nullable="true" />
+    <Property Type="String" Name="Danhgia" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemNCU_Result">
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNCU" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="QuyMoNCU" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemND_Result">
+    <Property Type="String" Name="IdND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenND" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TenTK" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PassWord" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="NgayTaoTK" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DanhmucTC" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="QuyenDM" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemNND_Result">
+    <Property Type="String" Name="IdNND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNhomQH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNND" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="MoTaNND" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemNQH_Result">
+    <Property Type="String" Name="IdNQH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNQH" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="MoTa" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="DanhmucTC" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="QuyenDM" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemnv_Result">
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNV" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NgaySinh" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gioitinh" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ChucVu" Nullable="false" MaxLength="100" />
+    <Property Type="Double" Name="LuongCB" Nullable="false" />
+    <Property Type="Double" Name="hsl" Nullable="false" />
+    <Property Type="String" Name="Taikhoan" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemSP_Result">
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenSP" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="NgaySX" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayHH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayNhap" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NhaSX" Nullable="false" MaxLength="200" />
+    <Property Type="Double" Name="SLNhap" Nullable="false" />
+    <Property Type="Double" Name="DonGiaNhap" Nullable="false" />
+    <Property Type="Double" Name="DonGiaBanLe" Nullable="false" />
+    <Property Type="Double" Name="DonGiaBanSi" Nullable="false" />
+    <Property Type="String" Name="Donvi" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="GiamGia" Nullable="true" />
+    <Property Type="String" Name="AnhSP" Nullable="true" MaxLength="1000" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemTC_Result">
+    <Property Type="String" Name="IdTC" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenTK" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LanDMKCuoi" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LanDNCuoi" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DanhmucTC" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Thaotac" Nullable="true" MaxLength="4000" />
+  </ComplexType>
+  <EntityType Name="CNCHITIET">
+    <Key>
+      <PropertyRef Name="IdCN" />
+      <PropertyRef Name="IdNCU" />
+    </Key>
+    <Property Name="IdCN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdNCU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenNCU" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SĐT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Conno" Type="Double" Nullable="false" />
+    <NavigationProperty Name="CONGNO" Relationship="QLBHDTModel.FK_CNCHITIET_CONGNO" FromRole="CNCHITIET" ToRole="CONGNO" />
+    <NavigationProperty Name="NHACUNGUNG" Relationship="QLBHDTModel.FK_CNCHITIET_NHACUNGUNG" FromRole="CNCHITIET" ToRole="NHACUNGUNG" />
+  </EntityType>
+  <EntityType Name="CONGNO">
+    <Key>
+      <PropertyRef Name="IdCN" />
+    </Key>
+    <Property Name="IdCN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NgayTK" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CNCHITIETs" Relationship="QLBHDTModel.FK_CNCHITIET_CONGNO" FromRole="CONGNO" ToRole="CNCHITIET" />
+    <NavigationProperty Name="NHANVIEN" Relationship="QLBHDTModel.FK_CONGNO_NHANVIEN" FromRole="CONGNO" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="DOANHTHU">
+    <Key>
+      <PropertyRef Name="IdDT" />
+    </Key>
+    <Property Name="IdDT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Doanhsoban" Type="Double" Nullable="false" />
+    <Property Name="Doanhthubh" Type="Double" Nullable="false" />
+    <Property Name="Loinhuan" Type="Double" Nullable="false" />
+    <Property Name="NgayTK" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="NHANVIEN" Relationship="QLBHDTModel.FK_DOANHTHU_NHANVIEN" FromRole="DOANHTHU" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="HANGTON">
+    <Key>
+      <PropertyRef Name="IdHT" />
+    </Key>
+    <Property Name="IdHT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NgayTK" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="NHANVIEN" Relationship="QLBHDTModel.FK_HANGTON_NHANVIEN" FromRole="HANGTON" ToRole="NHANVIEN" />
+    <NavigationProperty Name="HTCHITIETs" Relationship="QLBHDTModel.FK_HTCHITIET_HANGTON" FromRole="HANGTON" ToRole="HTCHITIET" />
+  </EntityType>
+  <EntityType Name="HDBANCHITIET">
+    <Key>
+      <PropertyRef Name="IdHDB" />
+      <PropertyRef Name="IdSP" />
+    </Key>
+    <Property Name="IdHDB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdSP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SL" Type="Double" Nullable="false" />
+    <Property Name="Dongiaban" Type="Double" Nullable="false" />
+    <Property Name="Giamgia" Type="Double" Nullable="false" />
+    <Property Name="Thanhtien" Type="Double" Nullable="false" />
+    <NavigationProperty Name="HOADONBAN" Relationship="QLBHDTModel.FK_HDBANCHITIET_HOADONBAN" FromRole="HDBANCHITIET" ToRole="HOADONBAN" />
+    <NavigationProperty Name="SANPHAM" Relationship="QLBHDTModel.FK_HDBANCHITIET_SANPHAM" FromRole="HDBANCHITIET" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="HDNHAPCHITIET">
+    <Key>
+      <PropertyRef Name="IdHDN" />
+      <PropertyRef Name="IdSP" />
+    </Key>
+    <Property Name="IdHDN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdSP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SL" Type="Double" Nullable="false" />
+    <Property Name="Dongianhap" Type="Double" />
+    <Property Name="Giamgia" Type="Double" />
+    <Property Name="Thanhtien" Type="Double" />
+    <NavigationProperty Name="HOADONNHAP" Relationship="QLBHDTModel.FK_HDNHAPCHITIET_HOADONNHAP" FromRole="HDNHAPCHITIET" ToRole="HOADONNHAP" />
+    <NavigationProperty Name="SANPHAM" Relationship="QLBHDTModel.FK_HDNHAPCHITIET_SANPHAM" FromRole="HDNHAPCHITIET" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="HOADONBAN">
+    <Key>
+      <PropertyRef Name="IdHDB" />
+    </Key>
+    <Property Name="IdHDB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdKH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NgayLapHD" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SL" Type="Double" />
+    <Property Name="Tongtien" Type="Double" />
+    <Property Name="HinhThucTT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Dathanhtoan" Type="Double" />
+    <Property Name="Conno" Type="Double" />
+    <NavigationProperty Name="HDBANCHITIETs" Relationship="QLBHDTModel.FK_HDBANCHITIET_HOADONBAN" FromRole="HOADONBAN" ToRole="HDBANCHITIET" />
+    <NavigationProperty Name="KHACHHANG" Relationship="QLBHDTModel.FK_HOADONBAN_KHACHHANG" FromRole="HOADONBAN" ToRole="KHACHHANG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="QLBHDTModel.FK_HOADONBAN_NHANVIEN" FromRole="HOADONBAN" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="HOADONNHAP">
+    <Key>
+      <PropertyRef Name="IdHDN" />
+    </Key>
+    <Property Name="IdHDN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdNCU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NgayLapHD" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SL" Type="Double" />
+    <Property Name="Tongtien" Type="Double" />
+    <Property Name="Dathanhtoan" Type="Double" />
+    <Property Name="Conno" Type="Double" />
+    <Property Name="NgayHHTT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HDNHAPCHITIETs" Relationship="QLBHDTModel.FK_HDNHAPCHITIET_HOADONNHAP" FromRole="HOADONNHAP" ToRole="HDNHAPCHITIET" />
+    <NavigationProperty Name="NHACUNGUNG" Relationship="QLBHDTModel.FK_HOADONNHAP_NHACUNGUNG" FromRole="HOADONNHAP" ToRole="NHACUNGUNG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="QLBHDTModel.FK_HOADONNHAP_NHANVIEN" FromRole="HOADONNHAP" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="HTCHITIET">
+    <Key>
+      <PropertyRef Name="IdHT" />
+      <PropertyRef Name="IdSP" />
+    </Key>
+    <Property Name="IdHT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdSP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenSP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySX" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NgayHH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NgayNhap" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SLCon" Type="Double" Nullable="false" />
+    <NavigationProperty Name="HANGTON" Relationship="QLBHDTModel.FK_HTCHITIET_HANGTON" FromRole="HTCHITIET" ToRole="HANGTON" />
+    <NavigationProperty Name="SANPHAM" Relationship="QLBHDTModel.FK_HTCHITIET_SANPHAM" FromRole="HTCHITIET" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="IdKH" />
+    </Key>
+    <Property Name="IdKH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenKH" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gioitinh" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoCMND" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SĐT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LoaiKH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Conno" Type="Double" />
+    <Property Name="Danhgia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HOADONBANs" Relationship="QLBHDTModel.FK_HOADONBAN_KHACHHANG" FromRole="KHACHHANG" ToRole="HOADONBAN" />
+  </EntityType>
+  <EntityType Name="NGUOI_DUNG">
+    <Key>
+      <PropertyRef Name="IdND" />
+    </Key>
+    <Property Name="IdND" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdNND" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenND" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TenTK" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PassWord" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NgayTaoTK" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DanhmucTC" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="QuyenDM" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NHANVIEN" Relationship="QLBHDTModel.FK_NGUOI_DUNG_NHAN_VIEN" FromRole="NGUOI_DUNG" ToRole="NHANVIEN" />
+    <NavigationProperty Name="NHOM_NGUOI_DUNG" Relationship="QLBHDTModel.FK_NGUOI_DUNG_NHOM_NGUOI_DUNG" FromRole="NGUOI_DUNG" ToRole="NHOM_NGUOI_DUNG" />
+    <NavigationProperty Name="TRUY_CAP" Relationship="QLBHDTModel.FK_TRUY_CAP_NGUOI_DUNG" FromRole="NGUOI_DUNG" ToRole="TRUY_CAP" />
+  </EntityType>
+  <EntityType Name="NHACUNGUNG">
+    <Key>
+      <PropertyRef Name="IdNCU" />
+    </Key>
+    <Property Name="IdNCU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenNCU" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SĐT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QuyMoNCU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ConnoNCU" Type="Double" />
+    <NavigationProperty Name="CNCHITIETs" Relationship="QLBHDTModel.FK_CNCHITIET_NHACUNGUNG" FromRole="NHACUNGUNG" ToRole="CNCHITIET" />
+    <NavigationProperty Name="HOADONNHAPs" Relationship="QLBHDTModel.FK_HOADONNHAP_NHACUNGUNG" FromRole="NHACUNGUNG" ToRole="HOADONNHAP" />
+    <NavigationProperty Name="SANPHAMs" Relationship="QLBHDTModel.FK_SANPHAM_NHACUNGUNG" FromRole="NHACUNGUNG" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="IdNV" />
+    </Key>
+    <Property Name="IdNV" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenNV" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gioitinh" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SĐT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChucVu" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LuongCB" Type="Double" Nullable="false" />
+    <Property Name="hsl" Type="Double" Nullable="false" />
+    <Property Name="Thuclinh" Type="Double" Nullable="false" />
+    <Property Name="Taikhoan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CONGNOes" Relationship="QLBHDTModel.FK_CONGNO_NHANVIEN" FromRole="NHANVIEN" ToRole="CONGNO" />
+    <NavigationProperty Name="DOANHTHUs" Relationship="QLBHDTModel.FK_DOANHTHU_NHANVIEN" FromRole="NHANVIEN" ToRole="DOANHTHU" />
+    <NavigationProperty Name="HANGTONs" Relationship="QLBHDTModel.FK_HANGTON_NHANVIEN" FromRole="NHANVIEN" ToRole="HANGTON" />
+    <NavigationProperty Name="HOADONBANs" Relationship="QLBHDTModel.FK_HOADONBAN_NHANVIEN" FromRole="NHANVIEN" ToRole="HOADONBAN" />
+    <NavigationProperty Name="HOADONNHAPs" Relationship="QLBHDTModel.FK_HOADONNHAP_NHANVIEN" FromRole="NHANVIEN" ToRole="HOADONNHAP" />
+    <NavigationProperty Name="NGUOI_DUNG" Relationship="QLBHDTModel.FK_NGUOI_DUNG_NHAN_VIEN" FromRole="NHANVIEN" ToRole="NGUOI_DUNG" />
+  </EntityType>
+  <EntityType Name="NHOM_NGUOI_DUNG">
+    <Key>
+      <PropertyRef Name="IdNND" />
+    </Key>
+    <Property Name="IdNND" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdNhomQH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenNND" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MoTaNND" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NGUOI_DUNG" Relationship="QLBHDTModel.FK_NGUOI_DUNG_NHOM_NGUOI_DUNG" FromRole="NHOM_NGUOI_DUNG" ToRole="NGUOI_DUNG" />
+    <NavigationProperty Name="NHOM_QUYEN_HAN" Relationship="QLBHDTModel.FK_NHOM_NGUOI_DUNG_NHOM_QUYEN_HAN" FromRole="NHOM_NGUOI_DUNG" ToRole="NHOM_QUYEN_HAN" />
+  </EntityType>
+  <EntityType Name="NHOM_QUYEN_HAN">
+    <Key>
+      <PropertyRef Name="IdNQH" />
+    </Key>
+    <Property Name="IdNQH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenNQH" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DanhmucTC" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="QuyenDM" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NHOM_NGUOI_DUNG" Relationship="QLBHDTModel.FK_NHOM_NGUOI_DUNG_NHOM_QUYEN_HAN" FromRole="NHOM_QUYEN_HAN" ToRole="NHOM_NGUOI_DUNG" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="IdSP" />
+    </Key>
+    <Property Name="IdSP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdNCU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenSP" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NgayHH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NgayNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NhaSX" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SLNhap" Type="Double" Nullable="false" />
+    <Property Name="DonGiaNhap" Type="Double" />
+    <Property Name="DonGiaBanLe" Type="Double" />
+    <Property Name="DonGiaBanSi" Type="Double" />
+    <Property Name="Donvi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GiamGia" Type="Double" />
+    <Property Name="AnhSP" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HDBANCHITIETs" Relationship="QLBHDTModel.FK_HDBANCHITIET_SANPHAM" FromRole="SANPHAM" ToRole="HDBANCHITIET" />
+    <NavigationProperty Name="HDNHAPCHITIETs" Relationship="QLBHDTModel.FK_HDNHAPCHITIET_SANPHAM" FromRole="SANPHAM" ToRole="HDNHAPCHITIET" />
+    <NavigationProperty Name="HTCHITIETs" Relationship="QLBHDTModel.FK_HTCHITIET_SANPHAM" FromRole="SANPHAM" ToRole="HTCHITIET" />
+    <NavigationProperty Name="NHACUNGUNG" Relationship="QLBHDTModel.FK_SANPHAM_NHACUNGUNG" FromRole="SANPHAM" ToRole="NHACUNGUNG" />
+  </EntityType>
+  <EntityType Name="TRUY_CAP">
+    <Key>
+      <PropertyRef Name="IdTC" />
+    </Key>
+    <Property Name="IdTC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdND" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TenTK" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LanDMKCuoi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LanDNCuoi" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DanhmucTC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Thaotac" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NGUOI_DUNG" Relationship="QLBHDTModel.FK_TRUY_CAP_NGUOI_DUNG" FromRole="TRUY_CAP" ToRole="NGUOI_DUNG" />
+  </EntityType>
+  <Association Name="FK_CNCHITIET_CONGNO">
+    <End Type="QLBHDTModel.CONGNO" Role="CONGNO" Multiplicity="1" />
+    <End Type="QLBHDTModel.CNCHITIET" Role="CNCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CONGNO">
+        <PropertyRef Name="IdCN" />
+      </Principal>
+      <Dependent Role="CNCHITIET">
+        <PropertyRef Name="IdCN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CNCHITIET_NHACUNGUNG">
+    <End Type="QLBHDTModel.NHACUNGUNG" Role="NHACUNGUNG" Multiplicity="1" />
+    <End Type="QLBHDTModel.CNCHITIET" Role="CNCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGUNG">
+        <PropertyRef Name="IdNCU" />
+      </Principal>
+      <Dependent Role="CNCHITIET">
+        <PropertyRef Name="IdNCU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONGNO_NHANVIEN">
+    <End Type="QLBHDTModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+    <End Type="QLBHDTModel.CONGNO" Role="CONGNO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="CONGNO">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOANHTHU_NHANVIEN">
+    <End Type="QLBHDTModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+    <End Type="QLBHDTModel.DOANHTHU" Role="DOANHTHU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="DOANHTHU">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HANGTON_NHANVIEN">
+    <End Type="QLBHDTModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+    <End Type="QLBHDTModel.HANGTON" Role="HANGTON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="HANGTON">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HTCHITIET_HANGTON">
+    <End Type="QLBHDTModel.HANGTON" Role="HANGTON" Multiplicity="1" />
+    <End Type="QLBHDTModel.HTCHITIET" Role="HTCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HANGTON">
+        <PropertyRef Name="IdHT" />
+      </Principal>
+      <Dependent Role="HTCHITIET">
+        <PropertyRef Name="IdHT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDBANCHITIET_HOADONBAN">
+    <End Type="QLBHDTModel.HOADONBAN" Role="HOADONBAN" Multiplicity="1" />
+    <End Type="QLBHDTModel.HDBANCHITIET" Role="HDBANCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADONBAN">
+        <PropertyRef Name="IdHDB" />
+      </Principal>
+      <Dependent Role="HDBANCHITIET">
+        <PropertyRef Name="IdHDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDBANCHITIET_SANPHAM">
+    <End Type="QLBHDTModel.SANPHAM" Role="SANPHAM" Multiplicity="1" />
+    <End Type="QLBHDTModel.HDBANCHITIET" Role="HDBANCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="IdSP" />
+      </Principal>
+      <Dependent Role="HDBANCHITIET">
+        <PropertyRef Name="IdSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDNHAPCHITIET_HOADONNHAP">
+    <End Type="QLBHDTModel.HOADONNHAP" Role="HOADONNHAP" Multiplicity="1" />
+    <End Type="QLBHDTModel.HDNHAPCHITIET" Role="HDNHAPCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADONNHAP">
+        <PropertyRef Name="IdHDN" />
+      </Principal>
+      <Dependent Role="HDNHAPCHITIET">
+        <PropertyRef Name="IdHDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HDNHAPCHITIET_SANPHAM">
+    <End Type="QLBHDTModel.SANPHAM" Role="SANPHAM" Multiplicity="1" />
+    <End Type="QLBHDTModel.HDNHAPCHITIET" Role="HDNHAPCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="IdSP" />
+      </Principal>
+      <Dependent Role="HDNHAPCHITIET">
+        <PropertyRef Name="IdSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADONBAN_KHACHHANG">
+    <End Type="QLBHDTModel.KHACHHANG" Role="KHACHHANG" Multiplicity="1" />
+    <End Type="QLBHDTModel.HOADONBAN" Role="HOADONBAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="IdKH" />
+      </Principal>
+      <Dependent Role="HOADONBAN">
+        <PropertyRef Name="IdKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADONBAN_NHANVIEN">
+    <End Type="QLBHDTModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+    <End Type="QLBHDTModel.HOADONBAN" Role="HOADONBAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="HOADONBAN">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADONNHAP_NHACUNGUNG">
+    <End Type="QLBHDTModel.NHACUNGUNG" Role="NHACUNGUNG" Multiplicity="1" />
+    <End Type="QLBHDTModel.HOADONNHAP" Role="HOADONNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGUNG">
+        <PropertyRef Name="IdNCU" />
+      </Principal>
+      <Dependent Role="HOADONNHAP">
+        <PropertyRef Name="IdNCU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADONNHAP_NHANVIEN">
+    <End Type="QLBHDTModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+    <End Type="QLBHDTModel.HOADONNHAP" Role="HOADONNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="HOADONNHAP">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HTCHITIET_SANPHAM">
+    <End Type="QLBHDTModel.SANPHAM" Role="SANPHAM" Multiplicity="1" />
+    <End Type="QLBHDTModel.HTCHITIET" Role="HTCHITIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="IdSP" />
+      </Principal>
+      <Dependent Role="HTCHITIET">
+        <PropertyRef Name="IdSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NGUOI_DUNG_NHAN_VIEN">
+    <End Type="QLBHDTModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+    <End Type="QLBHDTModel.NGUOI_DUNG" Role="NGUOI_DUNG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="NGUOI_DUNG">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NGUOI_DUNG_NHOM_NGUOI_DUNG">
+    <End Type="QLBHDTModel.NHOM_NGUOI_DUNG" Role="NHOM_NGUOI_DUNG" Multiplicity="1" />
+    <End Type="QLBHDTModel.NGUOI_DUNG" Role="NGUOI_DUNG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHOM_NGUOI_DUNG">
+        <PropertyRef Name="IdNND" />
+      </Principal>
+      <Dependent Role="NGUOI_DUNG">
+        <PropertyRef Name="IdNND" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRUY_CAP_NGUOI_DUNG">
+    <End Type="QLBHDTModel.NGUOI_DUNG" Role="NGUOI_DUNG" Multiplicity="1" />
+    <End Type="QLBHDTModel.TRUY_CAP" Role="TRUY_CAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOI_DUNG">
+        <PropertyRef Name="IdND" />
+      </Principal>
+      <Dependent Role="TRUY_CAP">
+        <PropertyRef Name="IdND" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SANPHAM_NHACUNGUNG">
+    <End Type="QLBHDTModel.NHACUNGUNG" Role="NHACUNGUNG" Multiplicity="1" />
+    <End Type="QLBHDTModel.SANPHAM" Role="SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGUNG">
+        <PropertyRef Name="IdNCU" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="IdNCU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHOM_NGUOI_DUNG_NHOM_QUYEN_HAN">
+    <End Type="QLBHDTModel.NHOM_QUYEN_HAN" Role="NHOM_QUYEN_HAN" Multiplicity="1" />
+    <End Type="QLBHDTModel.NHOM_NGUOI_DUNG" Role="NHOM_NGUOI_DUNG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHOM_QUYEN_HAN">
+        <PropertyRef Name="IdNQH" />
+      </Principal>
+      <Dependent Role="NHOM_NGUOI_DUNG">
+        <PropertyRef Name="IdNhomQH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_hienthiCNCT_Result">
+    <Property Type="String" Name="IdCN" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNCU" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="500" />
+    <Property Type="Double" Name="Conno" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiCNCTcuthe_Result">
+    <Property Type="String" Name="IdCN" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNCU" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="500" />
+    <Property Type="Double" Name="Conno" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiCNcuthe_Result">
+    <Property Type="String" Name="IdCN" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="NgayTK" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiDT_Result">
+    <Property Type="String" Name="IdDT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Doanhsoban" Nullable="false" />
+    <Property Type="Double" Name="Doanhthubh" Nullable="false" />
+    <Property Type="Double" Name="Loinhuan" Nullable="false" />
+    <Property Type="DateTime" Name="NgayTK" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiDTcuthe_Result">
+    <Property Type="String" Name="IdDT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Doanhsoban" Nullable="false" />
+    <Property Type="Double" Name="Doanhthubh" Nullable="false" />
+    <Property Type="Double" Name="Loinhuan" Nullable="false" />
+    <Property Type="DateTime" Name="NgayTK" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHDBCThientai_Result">
+    <Property Type="String" Name="IdHDB" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="SL" Nullable="false" />
+    <Property Type="Double" Name="Dongiaban" Nullable="false" />
+    <Property Type="Double" Name="Giamgia" Nullable="false" />
+    <Property Type="Double" Name="Thanhtien" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHDBCTLenBC_Result">
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenSP" Nullable="false" MaxLength="200" />
+    <Property Type="Double" Name="SL" Nullable="false" />
+    <Property Type="Double" Name="Dongiaban" Nullable="false" />
+    <Property Type="Double" Name="Giamgia" Nullable="false" />
+    <Property Type="Double" Name="Thanhtien" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHDNCTLenBC_Result">
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenSP" Nullable="false" MaxLength="200" />
+    <Property Type="Double" Name="SL" Nullable="false" />
+    <Property Type="Double" Name="Dongianhap" Nullable="true" />
+    <Property Type="Double" Name="Giamgia" Nullable="true" />
+    <Property Type="Double" Name="Thanhtien" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHTCT_Result">
+    <Property Type="String" Name="IdHT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenSP" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NgaySX" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayHH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayNhap" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="SLCon" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHTCTcuthe_Result">
+    <Property Type="String" Name="IdHT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenSP" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NgaySX" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayHH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NgayNhap" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="SLCon" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHTCTLenBC_Result">
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenSP" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="NgaySX" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NgayHH" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NgayNhap" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="SLCon" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiHTcuthe_Result">
+    <Property Type="String" Name="IdHT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="NgayTK" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiKHcuthe_Result">
+    <Property Type="String" Name="IdKH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenKH" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="NgaySinh" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gioitinh" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SoCMND" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LoaiKH" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Conno" Nullable="true" />
+    <Property Type="String" Name="Danhgia" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_hienthiNCUcuthe_Result">
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TenNCU" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="SĐT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="QuyMoNCU" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="ConnoNCU" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_KiemtraCNCTtrung_Result">
+    <Property Type="String" Name="IdCN" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNCU" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_KiemtraHTCTtrung_Result">
+    <Property Type="String" Name="IdHT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdSP" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemCN_Result">
+    <Property Type="String" Name="IdCN" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="NgayTK" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemDT_Result">
+    <Property Type="String" Name="IdDT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Doanhsoban" Nullable="false" />
+    <Property Type="Double" Name="Doanhthubh" Nullable="false" />
+    <Property Type="Double" Name="Loinhuan" Nullable="false" />
+    <Property Type="DateTime" Name="NgayTK" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_timkiemHT_Result">
+    <Property Type="String" Name="IdHT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="IdNV" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="NgayTK" Nullable="false" Precision="23" />
+  </ComplexType>
+</Schema>

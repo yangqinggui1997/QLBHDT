@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="83d79aaae84c425785669c04eabf3799" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBHDTModel.CNCHITIET" Width="1.5" PointX="8.625" PointY="3.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.CONGNO" Width="1.5" PointX="5.75" PointY="4.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.DOANHTHU" Width="1.5" PointX="0.5" PointY="4.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.HANGTON" Width="1.5" PointX="8.75" PointY="4.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.HDBANCHITIET" Width="1.5" PointX="5.75" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.HDNHAPCHITIET" Width="1.5" PointX="8.625" PointY="1.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.HOADONBAN" Width="1.5" PointX="3.125" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.HOADONNHAP" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.HTCHITIET" Width="1.5" PointX="10.625" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.KHACHHANG" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.NGUOI_DUNG" Width="1.5" PointX="3" PointY="3.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.NHACUNGUNG" Width="1.5" PointX="5.75" PointY="3.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.NHANVIEN" Width="1.5" PointX="3" PointY="1.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.NHOM_NGUOI_DUNG" Width="1.5" PointX="0.5" PointY="3.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.NHOM_QUYEN_HAN" Width="1.5" PointX="0.5" PointY="1.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.SANPHAM" Width="1.5" PointX="8.5" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="QLBHDTModel.TRUY_CAP" Width="1.5" PointX="3" PointY="4.625" IsExpanded="false" />
+        <AssociationConnector Association="QLBHDTModel.FK_CNCHITIET_CONGNO" />
+        <AssociationConnector Association="QLBHDTModel.FK_CNCHITIET_NHACUNGUNG" />
+        <AssociationConnector Association="QLBHDTModel.FK_CONGNO_NHANVIEN" />
+        <AssociationConnector Association="QLBHDTModel.FK_DOANHTHU_NHANVIEN" />
+        <AssociationConnector Association="QLBHDTModel.FK_HANGTON_NHANVIEN" />
+        <AssociationConnector Association="QLBHDTModel.FK_HTCHITIET_HANGTON" />
+        <AssociationConnector Association="QLBHDTModel.FK_HDBANCHITIET_HOADONBAN" />
+        <AssociationConnector Association="QLBHDTModel.FK_HDBANCHITIET_SANPHAM" />
+        <AssociationConnector Association="QLBHDTModel.FK_HDNHAPCHITIET_HOADONNHAP" />
+        <AssociationConnector Association="QLBHDTModel.FK_HDNHAPCHITIET_SANPHAM" />
+        <AssociationConnector Association="QLBHDTModel.FK_HOADONBAN_KHACHHANG" />
+        <AssociationConnector Association="QLBHDTModel.FK_HOADONBAN_NHANVIEN" />
+        <AssociationConnector Association="QLBHDTModel.FK_HOADONNHAP_NHACUNGUNG" />
+        <AssociationConnector Association="QLBHDTModel.FK_HOADONNHAP_NHANVIEN" />
+        <AssociationConnector Association="QLBHDTModel.FK_HTCHITIET_SANPHAM" />
+        <AssociationConnector Association="QLBHDTModel.FK_NGUOI_DUNG_NHAN_VIEN" />
+        <AssociationConnector Association="QLBHDTModel.FK_NGUOI_DUNG_NHOM_NGUOI_DUNG" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="QLBHDTModel.FK_TRUY_CAP_NGUOI_DUNG" />
+        <AssociationConnector Association="QLBHDTModel.FK_SANPHAM_NHACUNGUNG" ManuallyRouted="true" >
+          <ConnectorPoint PointX="7.25" PointY="3.3749975000000063" />
+          <ConnectorPoint PointX="7.625" PointY="3.0124999999999993" />
+          <ConnectorPoint PointX="7.625" PointY="1.6229186666666604" />
+          <ConnectorPoint PointX="8.21125" PointY="1.6229186666666604" />
+          <ConnectorPoint PointX="8.21125" PointY="0.9" />
+          <ConnectorPoint PointX="8.9065656565656557" PointY="0.9" />
+        </AssociationConnector>
+        <AssociationConnector Association="QLBHDTModel.FK_NHOM_NGUOI_DUNG_NHOM_QUYEN_HAN" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

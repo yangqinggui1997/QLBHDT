@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C1BB4F4-5571-4CBC-927E-3A7E3D78DAC2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLBHDT</RootNamespace>
+    <AssemblyName>QLBHDT</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar.Charts, Version=14.1.0.28, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar.Keyboard, Version=14.1.0.28, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.28, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CONGNO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONGNO.Designer.cs">
+      <DependentUpon>CONGNO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DANGKY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DANGKY.Designer.cs">
+      <DependentUpon>DANGKY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DANGNHAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DANGNHAP.Designer.cs">
+      <DependentUpon>DANGNHAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DOANHTHU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DOANHTHU.Designer.cs">
+      <DependentUpon>DOANHTHU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DOI_MK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DOI_MK.Designer.cs">
+      <DependentUpon>DOI_MK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\CNCHITIET.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\CONGNO.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\DOANHTHU.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\HANGTON.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\HDBANCHITIET.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\HDNHAPCHITIET.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\HOADONBAN.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\HOADONNHAP.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\HTCHITIET.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\KHACHHANG.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\NGUOI_DUNG.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\NHACUNGUNG.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\NHANVIEN.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\NHOM_NGUOI_DUNG.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\NHOM_QUYEN_HAN.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\QLBHDT.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBHDT.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\QLBHDT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\QLBHDT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBHDT.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\SANPHAM.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiCNCTcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiCNCT_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiCNcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiCN_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiDTcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiDT_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHDBCTcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHDBCThientai_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHDBCTLenBC_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHDBCT_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHDBcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHDB_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHDNCTcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHDNCTLenBC_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHDNCT_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHDNcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHDN_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHTCTcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHTCTLenBC_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHTCT_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHTcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiHT_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthikhachhang_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiKHcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiNCUcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiNCU_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiNDtheoten_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiND_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthinguoidungcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthinhacungungcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthinhanviencuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthinhanvien_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiNNDcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiNNDtheoten_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiNND_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiNQHcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiNQH_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiSPcuthe_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiSP_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_hienthiTC_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_KiemtraCNCTtrung_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_KiemtraHDBCTtrung_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_KiemtraHDNCTtrung_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_KiemtraHTCTtrung_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_LayTTKH_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_LayTTNCU_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_LayTTSP_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemCN_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemDT_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemHDB_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemHDN_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemHT_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemkh_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemNCU_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemND_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemNND_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemNQH_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemnv_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemSP_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\sp_timkiemTC_Result.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities Model\TRUY_CAP.cs">
+      <DependentUpon>QLBHDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GIOITHIEU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GIOITHIEU.Designer.cs">
+      <DependentUpon>GIOITHIEU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HANGTON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HANGTON.Designer.cs">
+      <DependentUpon>HANGTON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HDBAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HDBAN.Designer.cs">
+      <DependentUpon>HDBAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HDNHAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HDNHAP.Designer.cs">
+      <DependentUpon>HDNHAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HUONGDAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HUONGDAN.Designer.cs">
+      <DependentUpon>HUONGDAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KHACHHANG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KHACHHANG.Designer.cs">
+      <DependentUpon>KHACHHANG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MAIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN.Designer.cs">
+      <DependentUpon>MAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NCU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NCU.Designer.cs">
+      <DependentUpon>NCU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NGUOIDUNG_QH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NGUOIDUNG_QH.Designer.cs">
+      <DependentUpon>NGUOIDUNG_QH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NHANVIEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NHANVIEN.Designer.cs">
+      <DependentUpon>NHANVIEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NHOMND_NHOMQH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NHOMND_NHOMQH.Designer.cs">
+      <DependentUpon>NHOMND_NHOMQH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRINTPREVIEW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRINTPREVIEW.Designer.cs">
+      <DependentUpon>PRINTPREVIEW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLBHDTDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLBHDTDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLTRUYCAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTRUYCAP.Designer.cs">
+      <DependentUpon>QLTRUYCAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InHDBAN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InHDBAN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InHDNHAP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InHDNHAP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptCONGNO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCONGNO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptDOANHTHU.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDOANHTHU.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptHANGTON.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHANGTON.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SANPHAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SANPHAM.Designer.cs">
+      <DependentUpon>SANPHAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XEMQUYEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XEMQUYEN.Designer.cs">
+      <DependentUpon>XEMQUYEN.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CONGNO.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONGNO.resx">
+      <DependentUpon>CONGNO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DANGKY.resx">
+      <DependentUpon>DANGKY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DANGNHAP.resx">
+      <DependentUpon>DANGNHAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DOANHTHU.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DOANHTHU.resx">
+      <DependentUpon>DOANHTHU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DOI_MK.resx">
+      <DependentUpon>DOI_MK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GIOITHIEU.resx">
+      <DependentUpon>GIOITHIEU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HANGTON.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HANGTON.resx">
+      <DependentUpon>HANGTON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HDBAN.resx">
+      <DependentUpon>HDBAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HDNHAP.resx">
+      <DependentUpon>HDNHAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HUONGDAN.resx">
+      <DependentUpon>HUONGDAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INHOADONBAN.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INHOADONNHAP.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KHACHHANG.resx">
+      <DependentUpon>KHACHHANG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN.resx">
+      <DependentUpon>MAIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NCU.resx">
+      <DependentUpon>NCU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NGUOIDUNG_QH.resx">
+      <DependentUpon>NGUOIDUNG_QH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NHANVIEN.resx">
+      <DependentUpon>NHANVIEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NHOMND_NHOMQH.resx">
+      <DependentUpon>NHOMND_NHOMQH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRINTPREVIEW.resx">
+      <DependentUpon>PRINTPREVIEW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="QLTRUYCAP.resx">
+      <DependentUpon>QLTRUYCAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InHDBAN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InHDBAN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InHDNHAP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InHDNHAP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCONGNO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCONGNO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptDOANHTHU.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDOANHTHU.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptHANGTON.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHANGTON.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SANPHAM.resx">
+      <DependentUpon>SANPHAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XEMQUYEN.resx">
+      <DependentUpon>XEMQUYEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Entities Model\QLBHDT.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLBHDT.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities Model\QLBHDT.edmx.diagram">
+      <DependentUpon>QLBHDT.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QLBHDTDataSet.xsc">
+      <DependentUpon>QLBHDTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLBHDTDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLBHDTDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLBHDTDataSet.xss">
+      <DependentUpon>QLBHDTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\display.png" />
+    <None Include="Resources\delete %281%29.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\add %281%29.png" />
+    <None Include="Resources\minus %281%29.png" />
+    <None Include="Resources\minimize-tab.png" />
+    <None Include="Resources\minimize %281%29.png" />
+    <None Include="Resources\maximize-size-option.png" />
+    <None Include="Resources\subtraction.png" />
+    <None Include="Resources\cross.png" />
+    <None Include="Resources\tải xuống %281%291.jpg" />
+    <None Include="Resources\Ribbon_Exit_32x321.png" />
+    <None Include="Resources\ModelEditor_ModelMerge_32x321.png" />
+    <None Include="Resources\ModelEditor_Categorized_32x321.png" />
+    <None Include="Resources\BO_Vendor_32x321.png" />
+    <None Include="Resources\BO_User_32x3211.png" />
+    <None Include="Resources\BO_User_32x322.png" />
+    <None Include="Resources\BO_Sale_32x321.png" />
+    <None Include="Resources\BO_Product_32x321.png" />
+    <None Include="Resources\BO_PivotChart_32x321.png" />
+    <None Include="Resources\BO_Order_32x321.png" />
+    <None Include="Resources\BO_Opportunity_32x321.png" />
+    <None Include="Resources\BO_Lead_32x321.png" />
+    <None Include="Resources\BO_Employee_32x321.png" />
+    <None Include="Resources\BO_Department_32x321.png" />
+    <None Include="Resources\BO_Customer_32x321.png" />
+    <None Include="Resources\BO_Contact_32x321.png" />
+    <None Include="Resources\BO_Address_32x321.png" />
+    <None Include="Resources\Action_ShowItemOnDashboard_32x321.png" />
+    <None Include="Resources\Action_Security_ChangePassword_32x321.png" />
+    <None Include="Resources\Action_PivotChart_Data_Unbind_32x321.png" />
+    <None Include="Resources\Action_Logoff_32x321.png" />
+    <None Include="Resources\tải xuống %281%29.jpg" />
+    <None Include="Resources\Ribbon_Exit_32x32.png" />
+    <None Include="Resources\ModelEditor_ModelMerge_32x32.png" />
+    <None Include="Resources\ModelEditor_Categorized_32x32.png" />
+    <None Include="Resources\BO_Vendor_32x32.png" />
+    <None Include="Resources\BO_User_32x321.png" />
+    <None Include="Resources\BO_User_32x32.png" />
+    <None Include="Resources\BO_Sale_32x32.png" />
+    <None Include="Resources\BO_Product_32x32.png" />
+    <None Include="Resources\BO_PivotChart_32x32.png" />
+    <None Include="Resources\BO_Order_32x32.png" />
+    <None Include="Resources\BO_Opportunity_32x32.png" />
+    <None Include="Resources\BO_Lead_32x32.png" />
+    <None Include="Resources\BO_Employee_32x32.png" />
+    <None Include="Resources\BO_Department_32x32.png" />
+    <None Include="Resources\BO_Customer_32x32.png" />
+    <None Include="Resources\BO_Contact_32x32.png" />
+    <None Include="Resources\BO_Address_32x32.png" />
+    <None Include="Resources\Action_ShowItemOnDashboard_32x32.png" />
+    <None Include="Resources\Action_Security_ChangePassword_32x32.png" />
+    <None Include="Resources\Action_PivotChart_Data_Unbind_32x32.png" />
+    <None Include="Resources\Action_Logoff_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{2ff8cd8f-25b7-4f75-a01f-cfe85d2ba71a}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{f76f2196-4579-4edd-a3cc-f6f881403699}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Entities Model\QLBHDT.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLBHDT.edmx</DependentUpon>
+      <LastGenOutput>QLBHDT.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities Model\QLBHDT.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLBHDT.edmx</DependentUpon>
+      <LastGenOutput>QLBHDT.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\thiết-bị-điện-trong-gia-đình.jpg" />
+    <None Include="Resources\van-chuyen-do-dien-tu.jpg" />
+    <None Include="Resources\langphid.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

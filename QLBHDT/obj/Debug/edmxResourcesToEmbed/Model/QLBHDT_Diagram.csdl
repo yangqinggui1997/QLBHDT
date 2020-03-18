@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBHDTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BANHANG">
+    <Key>
+      <PropertyRef Name="IdSP" />
+      <PropertyRef Name="IdKH" />
+    </Key>
+    <Property Name="IdSP" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdKH" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgaySX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NhaSX" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Donvi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Dongia" Type="Double" Nullable="false" />
+    <Property Name="Giamgia" Type="Double" Nullable="false" />
+    <Property Name="SL" Type="Double" Nullable="false" />
+    <Property Name="Tongtien" Type="Double" Nullable="false" />
+    <Property Name="Ngayban" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdNV" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_BANHANG_KHACHHANG" FromRole="BANHANG" ToRole="KHACHHANG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_BANHANG_NHANVIEN" FromRole="BANHANG" ToRole="NHANVIEN" />
+    <NavigationProperty Name="SANPHAM" Relationship="Self.FK_BANHANG_SANPHAM" FromRole="BANHANG" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="IdKH" />
+    </Key>
+    <Property Name="IdKH" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgaySinh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SoCMND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SĐT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LoaiKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BANHANGs" Relationship="Self.FK_BANHANG_KHACHHANG" FromRole="KHACHHANG" ToRole="BANHANG" />
+  </EntityType>
+  <EntityType Name="NGUOIDUNG">
+    <Key>
+      <PropertyRef Name="TenTK" />
+    </Key>
+    <Property Name="TenTK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MK" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="IdNV" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="NHANVIEN" Relationship="QLBHDTModel.FK_NGUOIDUNG_NHANVIEN" FromRole="NGUOIDUNG" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="NHACUNGUNG">
+    <Key>
+      <PropertyRef Name="IdNCU" />
+    </Key>
+    <Property Name="IdNCU" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenNCU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SĐT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="QuyMoNCU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="NHAPHANGs" Relationship="Self.FK_NHAPHANG_NHACUNGUNG" FromRole="NHACUNGUNG" ToRole="NHAPHANG" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="IdNV" />
+    </Key>
+    <Property Name="IdNV" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgaySinh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SĐT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ChucVu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Taikhoan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BANHANGs" Relationship="Self.FK_BANHANG_NHANVIEN" FromRole="NHANVIEN" ToRole="BANHANG" />
+    <NavigationProperty Name="NHAPHANGs" Relationship="Self.FK_NHAPHANG_NHANVIEN" FromRole="NHANVIEN" ToRole="NHAPHANG" />
+    <NavigationProperty Name="NGUOIDUNGs" Relationship="QLBHDTModel.FK_NGUOIDUNG_NHANVIEN" FromRole="NHANVIEN" ToRole="NGUOIDUNG" />
+  </EntityType>
+  <EntityType Name="NHAPHANG">
+    <Key>
+      <PropertyRef Name="IdSP" />
+      <PropertyRef Name="IdNCU" />
+    </Key>
+    <Property Name="IdSP" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdNCU" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgaySX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NhaSX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Donvi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DonGiaNhap" Type="Double" Nullable="false" />
+    <Property Name="SL" Type="Double" Nullable="false" />
+    <Property Name="Tongtien" Type="Double" Nullable="false" />
+    <Property Name="Ngaynhap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdNV" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="NHACUNGUNG" Relationship="Self.FK_NHAPHANG_NHACUNGUNG" FromRole="NHAPHANG" ToRole="NHACUNGUNG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_NHAPHANG_NHANVIEN" FromRole="NHAPHANG" ToRole="NHANVIEN" />
+    <NavigationProperty Name="SANPHAM" Relationship="Self.FK_NHAPHANG_SANPHAM" FromRole="NHAPHANG" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="IdSP" />
+    </Key>
+    <Property Name="IdSP" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgaySX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NgayHH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NhaSX" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DonGiaNhap" Type="Double" Nullable="false" />
+    <Property Name="DonGiaBanLe" Type="Double" Nullable="false" />
+    <Property Name="DonGiaBanSi" Type="Double" Nullable="false" />
+    <Property Name="GiamGia" Type="Double" Nullable="false" />
+    <NavigationProperty Name="BANHANGs" Relationship="Self.FK_BANHANG_SANPHAM" FromRole="SANPHAM" ToRole="BANHANG" />
+    <NavigationProperty Name="NHAPHANGs" Relationship="Self.FK_NHAPHANG_SANPHAM" FromRole="SANPHAM" ToRole="NHAPHANG" />
+  </EntityType>
+  <Association Name="FK_BANHANG_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="BANHANG" Type="Self.BANHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="IdKH" />
+      </Principal>
+      <Dependent Role="BANHANG">
+        <PropertyRef Name="IdKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BANHANG_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="BANHANG" Type="Self.BANHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="BANHANG">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BANHANG_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="BANHANG" Type="Self.BANHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="IdSP" />
+      </Principal>
+      <Dependent Role="BANHANG">
+        <PropertyRef Name="IdSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHAPHANG_NHACUNGUNG">
+    <End Role="NHACUNGUNG" Type="Self.NHACUNGUNG" Multiplicity="1" />
+    <End Role="NHAPHANG" Type="Self.NHAPHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGUNG">
+        <PropertyRef Name="IdNCU" />
+      </Principal>
+      <Dependent Role="NHAPHANG">
+        <PropertyRef Name="IdNCU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHAPHANG_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="NHAPHANG" Type="Self.NHAPHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="NHAPHANG">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHAPHANG_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="NHAPHANG" Type="Self.NHAPHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="IdSP" />
+      </Principal>
+      <Dependent Role="NHAPHANG">
+        <PropertyRef Name="IdSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLBHDT_Diagram" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BANHANGs" EntityType="Self.BANHANG" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="NGUOIDUNGs" EntityType="Self.NGUOIDUNG" />
+    <EntitySet Name="NHACUNGUNGs" EntityType="Self.NHACUNGUNG" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="NHAPHANGs" EntityType="Self.NHAPHANG" />
+    <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
+    <AssociationSet Name="FK_BANHANG_KHACHHANG" Association="Self.FK_BANHANG_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="BANHANG" EntitySet="BANHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BANHANG_NHANVIEN" Association="Self.FK_BANHANG_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="BANHANG" EntitySet="BANHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BANHANG_SANPHAM" Association="Self.FK_BANHANG_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="BANHANG" EntitySet="BANHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHAPHANG_NHACUNGUNG" Association="Self.FK_NHAPHANG_NHACUNGUNG">
+      <End Role="NHACUNGUNG" EntitySet="NHACUNGUNGs" />
+      <End Role="NHAPHANG" EntitySet="NHAPHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHAPHANG_NHANVIEN" Association="Self.FK_NHAPHANG_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="NHAPHANG" EntitySet="NHAPHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHAPHANG_SANPHAM" Association="Self.FK_NHAPHANG_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="NHAPHANG" EntitySet="NHAPHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NGUOIDUNG_NHANVIEN" Association="QLBHDTModel.FK_NGUOIDUNG_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNGs" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_NGUOIDUNG_NHANVIEN">
+    <End Type="QLBHDTModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+    <End Type="QLBHDTModel.NGUOIDUNG" Role="NGUOIDUNG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="IdNV" />
+      </Principal>
+      <Dependent Role="NGUOIDUNG">
+        <PropertyRef Name="IdNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
